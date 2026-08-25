@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 48 60% 97%;
+  --foreground: 0 0% 10%;
+  --primary: 142 26% 39%;
+  --accent: 43 58% 58%;
+  --green-primary: #2d4a3e;
+  --green-dark: #1a3a2e;
+  --gold: #d4a853;
+  --cream: #fffef5;
+  --cream-warm: #fff9e6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #fffef5, #fff9e6, #fffef0, #fffbeb, #fff8e0);
+  min-height: 100vh;
+  font-family: "Noto Serif SC", SimSun, Songti SC, STSong, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans SC", Microsoft YaHei, SimHei, Heiti SC, sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #2d4a3e;
+  padding: 0.875rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.3s;
+  font-family: "Noto Sans SC", Microsoft YaHei, sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: #1a3a2e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px #2d4a3e4d;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  font-family: "Noto Sans SC", Microsoft YaHei, SimHei, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.section-subtitle {
+  margin-bottom: 3rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #666;
+  font-family: "Noto Serif SC", SimSun, Songti SC, serif;
+  font-weight: 400;
+}
+
+.sunlit-bg {
+  background: linear-gradient(135deg, #fffef5, #fff9e6 30%, #fffef0 70%, #fffbeb);
+  position: relative;
+}
+
+.sunlit-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(255, 215, 140, 0.2) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 100%, rgba(255, 220, 150, 0.12) 0%, transparent 35%);
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff9e6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a853;
+  border-radius: 3px;
+}

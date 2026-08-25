@@ -17,3 +17,16 @@ Thumbs.db
 *.log
 tmp/
 .cache/
+
+# Node
+node_modules/
+dist/
+*.local
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Netlify
+.netlify/
