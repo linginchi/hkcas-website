@@ -12,7 +12,7 @@ export const handler: Handler = async (event) => {
     return json(400, { error: "Missing id" });
   }
 
-  const record = await getPayment(id);
+  const record = await getPayment(id, event);
   if (!record) {
     return json(404, { error: "Not found" });
   }

@@ -60,7 +60,7 @@ export const handler: Handler = async (event) => {
     );
     record.stripeCheckoutSessionId = session.id;
     record.checkoutUrl = session.url ?? undefined;
-    await savePayment(record);
+    await savePayment(record, event);
 
     if (!session.url) {
       return json(502, { error: "Stripe did not return a checkout URL" });
@@ -74,7 +74,7 @@ export const handler: Handler = async (event) => {
       amount: parsed.value.amount,
     });
   } catch (error) {
-    await savePayment(record);
+    await savePayment(record, event);
     const message = error instanceof Error ? error.message : "Stripe error";
     return json(502, { error: message });
   }

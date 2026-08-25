@@ -47,9 +47,13 @@ export const handler: Handler = async (event) => {
     return json(200, { received: true, unmatched: stripeEvent.type });
   }
 
-  await updatePayment(paymentId, {
-    status,
-    stripeCheckoutSessionId: object.id,
-  });
+  await updatePayment(
+    paymentId,
+    {
+      status,
+      stripeCheckoutSessionId: object.id,
+    },
+    event,
+  );
   return json(200, { received: true, paymentId, status });
 };
