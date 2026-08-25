@@ -7,7 +7,9 @@ const STORE = "hkcas-payments";
 function resolveStore(event?: HandlerEvent): Store {
   const blobsContext = (event as { blobs?: string } | undefined)?.blobs;
   if (blobsContext) {
-    connectLambda(event as { blobs: string; headers: Record<string, string> });
+    connectLambda(
+      event as unknown as { blobs: string; headers: Record<string, string> },
+    );
     return getStore(STORE);
   }
 
