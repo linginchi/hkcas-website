@@ -17,7 +17,7 @@ export const translations = {
       subtitle: "（香港）有限公司",
       description:
         "依托大湾区战略枢纽，驱动绿色与数字技术的全球转化与实业落地，通过“咨询+投资+运营”全周期赋能，助力国家战略执行与地方经济高质量转型。",
-      cta: { learnMore: "了解更多", contact: "联系我们" },
+      cta: { learnMore: "了解更多", contact: "联系我们", donate: "公益捐赠" },
       stats: { founded: "成立年份", business: "核心业务", location: "战略枢纽" },
     },
     mission: {
@@ -51,7 +51,7 @@ export const translations = {
       history2:
         "在时任香港行政长官林郑月娥女士、中科院院长白春礼院士、中联办副主任谭铁牛院士、著名银行家马蔚华博士等各界知名人士的见证下，双方签订合作谅解备忘录，为绿色新科技和产业发展建立合作框架。",
       history3:
-        "作为本次论坛的落地成果之一，国科绿色发展国际实验室（香港）有限公司于2019年在中国香港注册成为担保有限公司。2023年中咨产融（北京）科技有限公司成为实控机构成员。",
+        "作为本次论坛的落地成果之一，国科绿色发展国际实验室（香港）有限公司于2019年在中国香港注册成为非营利机构。2023年中咨产融（北京）科技有限公司成为实控机构成员。",
       founded: "成立年份",
       foundedValue: "2019",
       location: "注册地点",
@@ -76,7 +76,7 @@ export const translations = {
           year: "2019",
           title: "公司成立",
           content:
-            "国科绿色发展国际实验室（香港）有限公司在香港注册成为担保有限公司，是一家非盈利性质的法人组织。",
+            "国科绿色发展国际实验室（香港）有限公司在香港注册成为非营利机构。",
         },
         control: {
           year: "2023",
@@ -203,8 +203,9 @@ export const translations = {
       give: {
         kicker: "支持 HKCAS",
         title: "向我们捐赠",
-        body: "国科绿色发展国际实验室（香港）为非营利担保有限公司，接受公益捐赠。公开捐赠定额为港币 1,000 元，款项用于教育、学术与绿色发展相关公益。",
+        body: "国科绿色发展国际实验室（香港）为香港注册的非营利机构，接受公益捐赠。公开捐赠定额为港币 1,000 元，款项用于教育、学术与绿色发展相关公益。",
         currency: "HKD",
+        price: "港币 HKD 1,000",
         name: "姓名",
         email: "邮箱",
         note: "支付完成后将发送香港收据。不提供内地增值税发票。咨询费请通过工作人员链接支付，勿与捐赠混淆。",
@@ -220,7 +221,6 @@ export const translations = {
       info: {
         address: { title: "地址", value: "香港湾仔" },
         email: { title: "邮箱", value: "contact@hkcas.org" },
-        wechat: { title: "微信公众号", value: "扫一扫关注我们" },
       },
       form: {
         title: "留言咨询",
@@ -309,7 +309,7 @@ export const translations = {
       subtitle: "International (Hong Kong) Ltd.",
       description:
         'Leveraging the Greater Bay Area as a strategic hub, we drive the global transformation and industrial implementation of green and digital technologies. Through our full-cycle "Consulting + Investment + Operations" model, we empower national strategy execution and high-quality local economic transformation.',
-      cta: { learnMore: "Learn More", contact: "Contact Us" },
+      cta: { learnMore: "Learn More", contact: "Contact Us", donate: "Donate" },
       stats: { founded: "Founded", business: "Core Business", location: "Strategic Hub" },
     },
     mission: {
@@ -345,7 +345,7 @@ export const translations = {
       history2:
         "Witnessed by Mrs. Carrie Lam Cheng Yuet-ngor, then Chief Executive of Hong Kong, Academician Bai Chunli, President of the Chinese Academy of Sciences, Academician Tan Tieniu, Deputy Director of the Liaison Office, and Dr. Ma Weihua, renowned banker, both parties signed a Memorandum of Understanding to establish a cooperation framework for green new technology and industrial development.",
       history3:
-        "As one of the outcomes of this forum, CAS Laboratory of Green Development International (Hong Kong) Ltd. was registered as a company limited by guarantee in Hong Kong in 2019. In 2023, CIECC Industry-Finance (Beijing) Technology Co., Ltd. became the controlling institution.",
+        "As one of the outcomes of this forum, CAS Laboratory of Green Development International (Hong Kong) Ltd. was registered as a non-profit organisation in Hong Kong in 2019. In 2023, CIECC Industry-Finance (Beijing) Technology Co., Ltd. became the controlling institution.",
       founded: "Founded",
       foundedValue: "2019",
       location: "Location",
@@ -507,8 +507,9 @@ export const translations = {
       give: {
         kicker: "Support HKCAS",
         title: "Make a donation",
-        body: "HKCAS is a Hong Kong non-profit company limited by guarantee. The public donation amount is HKD 1,000, supporting education, research, and green development.",
+        body: "HKCAS is a Hong Kong-registered non-profit organisation. The public donation amount is HKD 1,000, supporting education, research, and green development.",
         currency: "HKD",
+        price: "HKD 1,000",
         name: "Name",
         email: "Email",
         note: "A Hong Kong receipt will be emailed after payment. No mainland VAT fapiao. Consultation fees are billed separately by staff — please do not treat them as donations.",
@@ -524,7 +525,6 @@ export const translations = {
       info: {
         address: { title: "Address", value: "Wan Chai, Hong Kong" },
         email: { title: "Email", value: "contact@hkcas.org" },
-        wechat: { title: "WeChat", value: "Scan to follow" },
       },
       form: {
         title: "Send a Message",

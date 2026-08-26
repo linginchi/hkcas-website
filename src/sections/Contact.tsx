@@ -1,4 +1,4 @@
-import { CheckCircle2, Mail, MapPin, QrCode } from "lucide-react";
+import { CheckCircle2, Mail, MapPin } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { postJson } from "../lib/api";
 import { useInView } from "../hooks/useInView";
@@ -67,18 +67,6 @@ export function Contact() {
                 <a href="mailto:contact@hkcas.org" className="hover:text-[#4A7C59]">
                   {t("contact.info.email.value")}
                 </a>
-              </div>
-            </div>
-            <div className="bg-white/70 rounded-3xl p-6 border border-[#E8DFD0]">
-              <div className="flex gap-4 mb-4">
-                <QrCode className="w-6 h-6 text-[#4A7C59] shrink-0" />
-                <div>
-                  <div className="text-sm text-[#8B7355] mb-1">{t("contact.info.wechat.title")}</div>
-                  <div>{t("contact.info.wechat.value")}</div>
-                </div>
-              </div>
-              <div className="h-32 rounded-2xl bg-[#FFF9E6] flex items-center justify-center text-[#8B7355] text-sm">
-                {language === "zh" ? "二维码" : "QR Code"}
               </div>
             </div>
           </div>

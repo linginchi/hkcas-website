@@ -89,10 +89,6 @@ export function Philanthropy() {
           <p className="text-sm tracking-wide text-[#D4A853] mb-3">{t("philanthropy.give.kicker")}</p>
           <h3 className="text-2xl md:text-3xl font-medium mb-4">{t("philanthropy.give.title")}</h3>
           <p className="font-serif text-[#FFF9E6]/85 mb-8">{t("philanthropy.give.body")}</p>
-          <div className="flex items-end gap-3 mb-8">
-            <span className="text-sm text-[#D4A853] pb-2">{t("philanthropy.give.currency")}</span>
-            <span className="text-5xl md:text-6xl font-medium leading-none">1,000</span>
-          </div>
           <form onSubmit={donate} className="grid sm:grid-cols-2 gap-4">
             <label className="space-y-2 block">
               <span className="text-sm text-[#FFF9E6]/80">{t("philanthropy.give.name")}</span>
@@ -115,12 +111,16 @@ export function Philanthropy() {
                 placeholder={language === "zh" ? "用于接收收据" : "For your receipt"}
               />
             </label>
-            <div className="sm:col-span-2">
-              <p className="text-sm text-[#FFF9E6]/70 mb-4">{t("philanthropy.give.note")}</p>
-              {error ? <p className="text-sm text-red-200 mb-3">{error}</p> : null}
-              <button type="submit" disabled={sending} className="btn-primary bg-[#D4A853] text-[#1a3a2e] hover:bg-[#c49a48] disabled:opacity-50">
-                {sending ? t("philanthropy.give.sending") : t("philanthropy.give.button")}
+            <div className="sm:col-span-2 flex flex-col items-center gap-4 pt-2">
+              <button
+                type="submit"
+                disabled={sending}
+                className="inline-flex items-center justify-center rounded-full bg-[#D4A853] px-10 py-4 text-xl md:text-2xl font-medium text-[#1a3a2e] shadow-[0_8px_24px_rgba(212,168,83,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e0b45e] hover:shadow-[0_12px_28px_rgba(212,168,83,0.5)] active:translate-y-0 disabled:opacity-50"
+              >
+                {sending ? t("philanthropy.give.sending") : t("philanthropy.give.price")}
               </button>
+              <p className="text-sm text-[#FFF9E6]/70 text-center">{t("philanthropy.give.note")}</p>
+              {error ? <p className="text-sm text-red-200">{error}</p> : null}
             </div>
           </form>
         </div>
