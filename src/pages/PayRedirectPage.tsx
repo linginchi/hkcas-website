@@ -7,7 +7,7 @@ import { useLanguage } from "../hooks/useLanguage";
 export function PayRedirectPage() {
   const { id } = useParams();
   const { t } = useLanguage();
-  const [message, setMessage] = useState<"loading" | "expired" | "paid" | "missing">("loading");
+  const [message, setMessage] = useState<"loading" | "expired" | "paid" | "paidDonation" | "missing">("loading");
 
   useEffect(() => {
     if (!id) {
@@ -22,7 +22,7 @@ export function PayRedirectPage() {
           return;
         }
         if (payload.status === "paid") {
-          setMessage("paid");
+          setMessage(payload.purpose === "donation" ? "paidDonation" : "paid");
           return;
         }
         if (payload.status === "expired" || payload.status === "failed") {

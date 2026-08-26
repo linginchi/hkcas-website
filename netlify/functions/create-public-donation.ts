@@ -1,15 +1,11 @@
 import type { Handler } from "@netlify/functions";
-import { validateCreatePayment } from "../../shared/payments.ts";
-import { isStaff } from "./lib/auth.ts";
+import { validatePublicDonation } from "../../shared/payments.ts";
 import { startCheckout } from "./lib/checkout.ts";
 import { json, requestBody } from "./lib/http.ts";
 
 export const handler: Handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return json(405, { error: "Method not allowed" });
-  }
-  if (!isStaff(event)) {
-    return json(401, { error: "Unauthorized" });
   }
 
   let raw: unknown;
@@ -19,7 +15,7 @@ export const handler: Handler = async (event) => {
     return json(400, { error: "Invalid JSON" });
   }
 
-  const parsed = validateCreatePayment(raw);
+  const parsed = validatePublicDonation(raw);
   if (!parsed.ok) {
     return json(400, { error: parsed.error });
   }

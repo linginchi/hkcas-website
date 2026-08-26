@@ -26,6 +26,7 @@ export function StaffPayPage() {
     customerEmail: "",
     amount: "",
     region: "overseas",
+    purpose: "consultation",
     description: "",
   });
 
@@ -62,6 +63,7 @@ export function StaffPayPage() {
         customerEmail: form.customerEmail,
         amount: Number(form.amount),
         region: form.region,
+        purpose: form.purpose,
         description: form.description,
       }, { signal: AbortSignal.timeout(15000) });
       if (!response.ok) {
@@ -116,6 +118,29 @@ export function StaffPayPage() {
             </form>
           ) : (
             <form onSubmit={create} className="space-y-5">
+              <fieldset className="space-y-2">
+                <legend>{t("staff.purpose")}</legend>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="purpose"
+                    value="consultation"
+                    checked={form.purpose === "consultation"}
+                    onChange={() => setForm({ ...form, purpose: "consultation" })}
+                  />
+                  {t("staff.purposeConsultation")}
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="purpose"
+                    value="donation"
+                    checked={form.purpose === "donation"}
+                    onChange={() => setForm({ ...form, purpose: "donation" })}
+                  />
+                  {t("staff.purposeDonation")}
+                </label>
+              </fieldset>
               <label className="block space-y-2">
                 <span>{t("staff.customerName")}</span>
                 <input
@@ -173,7 +198,9 @@ export function StaffPayPage() {
                 />
               </label>
               <label className="block space-y-2">
-                <span>{t("staff.description")}</span>
+                <span>
+                  {form.purpose === "donation" ? t("staff.descriptionDonation") : t("staff.description")}
+                </span>
                 <textarea
                   value={form.description}
                   onChange={(e) => setForm({ ...form, description: e.target.value })}
@@ -182,7 +209,9 @@ export function StaffPayPage() {
                   required
                 />
               </label>
-              <p className="text-sm text-[#8B7355]">{t("staff.invoiceNote")}</p>
+              <p className="text-sm text-[#8B7355]">
+                {form.purpose === "donation" ? t("staff.invoiceNoteDonation") : t("staff.invoiceNote")}
+              </p>
               {error ? <p className="text-sm text-red-600">{error}</p> : null}
               <button type="submit" disabled={creating} className="btn-primary disabled:opacity-50">
                 {creating ? t("staff.creating") : t("staff.create")}

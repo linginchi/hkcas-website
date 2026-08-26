@@ -23,5 +23,6 @@ export const handler: Handler = async (event) => {
     checkoutUrl: record.checkoutUrl,
     currency: record.currency,
     amount: record.amount,
+    purpose: record.purpose ?? "consultation",
   });
 };
