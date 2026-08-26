@@ -21,18 +21,6 @@ export function Hero() {
       </div>
       <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="flex justify-center mb-8 sm:mb-10">
-            <a
-              href="#philanthropy"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector("#philanthropy")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="btn-primary bg-[#D4A853] text-[#1a3a2e] hover:bg-[#c49a48] shadow-lg"
-            >
-              {t("hero.cta.donate")}
-            </a>
-          </div>
           <div className="grid grid-cols-3 gap-4 sm:gap-8 md:gap-12">
             <div className="text-center">
               <div className="text-2xl sm:text-4xl md:text-5xl font-medium text-[#2D4A3E]">2019</div>
