@@ -28,11 +28,6 @@
   status = 200
 
 [[redirects]]
-  from = "/api/payments/donate"
-  to = "/.netlify/functions/create-public-donation"
-  status = 200
-
-[[redirects]]
   from = "/api/payments/webhook"
   to = "/.netlify/functions/stripe-webhook"
   status = 200

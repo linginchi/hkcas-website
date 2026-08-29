@@ -1,7 +1,7 @@
 import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 
 export type Region = "overseas" | "china";
-export type PaymentPurpose = "consultation" | "donation";
+export type PaymentPurpose = "consultation";
 
 export type CreatePaymentInput = {
   customerName: string;
@@ -51,9 +51,6 @@ export type CheckoutSessionParams = {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const STAFF_COOKIE_PAYLOAD = "hkcas-staff-ok";
 
-export const PUBLIC_DONATION_AMOUNT_HKD = 1000;
-export const PUBLIC_DONATION_PRICE_ID = "price_1U8WTo4HKHE36SPecSp13et7";
-
 export function validateCreatePayment(
   input: unknown,
 ): { ok: true; value: CreatePaymentInput } | { ok: false; error: string } {
@@ -80,8 +77,8 @@ export function validateCreatePayment(
   if (region !== "overseas" && region !== "china") {
     return { ok: false, error: "请选择境外或境内" };
   }
-  if (purpose !== "consultation" && purpose !== "donation") {
-    return { ok: false, error: "请选择咨询费或捐款" };
+  if (purpose !== "consultation") {
+    return { ok: false, error: "仅支持咨询费收款" };
   }
   if (description.length < 1 || description.length > 500) {
     return { ok: false, error: "请填写说明" };
@@ -93,27 +90,7 @@ export function validateCreatePayment(
   };
 }
 
-export function validatePublicDonation(
-  input: unknown,
-): { ok: true; value: CreatePaymentInput } | { ok: false; error: string } {
-  if (!input || typeof input !== "object") {
-    return { ok: false, error: "请求体无效" };
-  }
-  const body = input as Record<string, unknown>;
-  return validateCreatePayment({
-    customerName: body.customerName ?? body.name,
-    customerEmail: body.customerEmail ?? body.email,
-    amount: PUBLIC_DONATION_AMOUNT_HKD,
-    region: "overseas",
-    purpose: "donation",
-    description: "HKCAS donation HKD 1000",
-  });
-}
-
-export function checkoutProductName(purpose: PaymentPurpose, region: Region): string {
-  if (purpose === "donation") {
-    return region === "china" ? "HKCAS 捐赠" : "HKCAS donation";
-  }
+export function checkoutProductName(_purpose: PaymentPurpose, region: Region): string {
   return region === "china" ? "HKCAS 咨询费" : "HKCAS consultation fee";
 }
 
@@ -135,25 +112,12 @@ export function randomIntegrationSuffix(): string {
   return out;
 }
 
-export function usesCatalogDonationPrice(
-  input: CreatePaymentInput,
-  donationPriceId?: string,
-): boolean {
-  return Boolean(
-    donationPriceId &&
-      input.purpose === "donation" &&
-      input.region === "overseas" &&
-      input.amount === PUBLIC_DONATION_AMOUNT_HKD,
-  );
-}
-
 export function buildCheckoutSessionParams(opts: {
   paymentId: string;
   input: CreatePaymentInput;
   siteUrl: string;
   pmcOverseas?: string;
   pmcChina?: string;
-  donationPriceId?: string;
   integrationSuffix?: string;
 }): CheckoutSessionParams {
   const currency = regionCurrency(opts.input.region);
@@ -161,25 +125,22 @@ export function buildCheckoutSessionParams(opts: {
   const siteUrl = opts.siteUrl.replace(/\/$/, "");
   const pmc =
     opts.input.region === "china" ? opts.pmcChina : opts.pmcOverseas;
-  const catalogPrice = usesCatalogDonationPrice(opts.input, opts.donationPriceId);
 
   const params: CheckoutSessionParams = {
     mode: "payment",
     customer_email: opts.input.customerEmail,
     line_items: [
-      catalogPrice
-        ? { quantity: 1, price: opts.donationPriceId }
-        : {
-            quantity: 1,
-            price_data: {
-              currency,
-              unit_amount: toStripeAmount(opts.input.amount),
-              product_data: {
-                name: checkoutProductName(opts.input.purpose, opts.input.region),
-                description: opts.input.description,
-              },
-            },
+      {
+        quantity: 1,
+        price_data: {
+          currency,
+          unit_amount: toStripeAmount(opts.input.amount),
+          product_data: {
+            name: checkoutProductName(opts.input.purpose, opts.input.region),
+            description: opts.input.description,
           },
+        },
+      },
     ],
     success_url: `${siteUrl}/pay/success?purpose=${opts.input.purpose}&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${siteUrl}/pay/cancel?id=${encodeURIComponent(opts.paymentId)}`,
@@ -190,7 +151,7 @@ export function buildCheckoutSessionParams(opts: {
       customerName: opts.input.customerName,
       description: opts.input.description.slice(0, 450),
     },
-    integration_identifier: `hkcas-${opts.input.purpose === "donation" ? "donate" : "consult"}-${suffix}`,
+    integration_identifier: `hkcas-consult-${suffix}`,
     locale: opts.input.region === "china" ? "zh" : "auto",
     payment_intent_data: {
       metadata: {

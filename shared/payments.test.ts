@@ -1,13 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
-  PUBLIC_DONATION_AMOUNT_HKD,
   buildCheckoutSessionParams,
   paymentStatusFromEvent,
   randomIntegrationSuffix,
   regionCurrency,
   toStripeAmount,
   validateCreatePayment,
-  validatePublicDonation,
   verifyStaffCookie,
   verifyStaffPassword,
   staffCookieValue,
@@ -30,7 +28,7 @@ describe("validateCreatePayment", () => {
     }
   });
 
-  it("defaults missing purpose to consultation and accepts donation", () => {
+  it("defaults missing purpose to consultation and rejects donation", () => {
     const consultation = validateCreatePayment({
       customerName: "Alex Chen",
       customerEmail: "alex@example.com",
@@ -48,22 +46,7 @@ describe("validateCreatePayment", () => {
       purpose: "donation",
       description: "Annual donation",
     });
-    expect(donation.ok).toBe(true);
-    if (donation.ok) expect(donation.value.purpose).toBe("donation");
-  });
-
-  it("locks public donations to HKD 1000 regardless of client amount", () => {
-    const result = validatePublicDonation({
-      name: "Donor",
-      email: "donor@example.com",
-      amount: 1,
-    });
-    expect(result.ok).toBe(true);
-    if (result.ok) {
-      expect(result.value.amount).toBe(PUBLIC_DONATION_AMOUNT_HKD);
-      expect(result.value.purpose).toBe("donation");
-      expect(result.value.region).toBe("overseas");
-    }
+    expect(donation.ok).toBe(false);
   });
 
   it("rejects invalid email, zero amount, and unknown region", () => {
@@ -142,31 +125,6 @@ describe("buildCheckoutSessionParams", () => {
     expect(params.payment_intent_data.metadata.paymentId).toBe("pay_1");
     expect(params.success_url).toContain("/pay/success?purpose=consultation");
     expect(params.cancel_url).toContain("/pay/cancel?id=pay_1");
-  });
-
-  it("uses the Stripe Donation catalog price for HKD 1000 public gifts", () => {
-    const params = buildCheckoutSessionParams({
-      paymentId: "pay_3",
-      input: {
-        ...input,
-        purpose: "donation",
-        region: "overseas",
-        amount: 1000,
-        description: "HKCAS donation HKD 1000",
-      },
-      siteUrl: "https://hkcas.org",
-      donationPriceId: "price_1U8WTo4HKHE36SPecSp13et7",
-      integrationSuffix: "qrstuvwx",
-    });
-
-    expect(params.line_items?.[0]).toEqual({
-      quantity: 1,
-      price: "price_1U8WTo4HKHE36SPecSp13et7",
-    });
-    expect(params.line_items?.[0]).not.toHaveProperty("price_data");
-    expect(params.metadata.purpose).toBe("donation");
-    expect(params.integration_identifier).toBe("hkcas-donate-qrstuvwx");
-    expect(params.success_url).toContain("/pay/success?purpose=donation");
   });
 
   it("creates an HKD overseas session using the overseas configuration", () => {

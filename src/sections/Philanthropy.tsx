@@ -1,15 +1,10 @@
 import { GraduationCap, Landmark, Lightbulb, Sprout } from "lucide-react";
-import { useState, type FormEvent } from "react";
-import { postJson } from "../lib/api";
 import { useLanguage } from "../hooks/useLanguage";
 import { useInView } from "../hooks/useInView";
 
 export function Philanthropy() {
   const { language, t } = useLanguage();
   const { ref, visible } = useInView<HTMLElement>();
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState("");
-  const [form, setForm] = useState({ name: "", email: "" });
 
   const donations = [
     {
@@ -41,24 +36,6 @@ export function Philanthropy() {
     },
   ];
 
-  const donate = async (e: FormEvent) => {
-    e.preventDefault();
-    setSending(true);
-    setError("");
-    try {
-      const { response, payload } = await postJson("/api/payments/donate", form, {
-        signal: AbortSignal.timeout(15000),
-      });
-      if (!response.ok || typeof payload.checkoutUrl !== "string") {
-        throw new Error(typeof payload.error === "string" ? payload.error : t("philanthropy.give.error"));
-      }
-      window.location.href = payload.checkoutUrl;
-    } catch (err) {
-      setError(err instanceof Error ? err.message : t("philanthropy.give.error"));
-      setSending(false);
-    }
-  };
-
   return (
     <section id="philanthropy" ref={ref} className="py-24 md:py-32 sunlit-bg">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -83,46 +60,6 @@ export function Philanthropy() {
               {item.subtitle ? <p className="text-sm text-[#666666]">{item.subtitle}</p> : null}
             </div>
           ))}
-        </div>
-
-        <div className="max-w-3xl mx-auto mb-16 bg-[#2D4A3E] text-[#FFF9E6] rounded-3xl p-8 md:p-10">
-          <p className="text-sm tracking-wide text-[#D4A853] mb-3">{t("philanthropy.give.kicker")}</p>
-          <h3 className="text-2xl md:text-3xl font-medium mb-4">{t("philanthropy.give.title")}</h3>
-          <p className="font-serif text-[#FFF9E6]/85 mb-8">{t("philanthropy.give.body")}</p>
-          <form onSubmit={donate} className="grid sm:grid-cols-2 gap-4">
-            <label className="space-y-2 block">
-              <span className="text-sm text-[#FFF9E6]/80">{t("philanthropy.give.name")}</span>
-              <input
-                required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-[#D4A853]"
-                placeholder={language === "zh" ? "捐赠人姓名" : "Donor name"}
-              />
-            </label>
-            <label className="space-y-2 block">
-              <span className="text-sm text-[#FFF9E6]/80">{t("philanthropy.give.email")}</span>
-              <input
-                required
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-[#D4A853]"
-                placeholder={language === "zh" ? "用于接收收据" : "For your receipt"}
-              />
-            </label>
-            <div className="sm:col-span-2 flex flex-col items-center gap-4 pt-2">
-              <button
-                type="submit"
-                disabled={sending}
-                className="inline-flex items-center justify-center rounded-full bg-[#D4A853] px-10 py-4 text-xl md:text-2xl font-medium text-[#1a3a2e] shadow-[0_8px_24px_rgba(212,168,83,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e0b45e] hover:shadow-[0_12px_28px_rgba(212,168,83,0.5)] active:translate-y-0 disabled:opacity-50"
-              >
-                {sending ? t("philanthropy.give.sending") : t("philanthropy.give.price")}
-              </button>
-              <p className="text-sm text-[#FFF9E6]/70 text-center">{t("philanthropy.give.note")}</p>
-              {error ? <p className="text-sm text-red-200">{error}</p> : null}
-            </div>
-          </form>
         </div>
 
         <blockquote className="text-center max-w-3xl mx-auto mb-12">

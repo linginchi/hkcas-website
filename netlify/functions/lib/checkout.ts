@@ -1,7 +1,6 @@
 import { randomBytes } from "node:crypto";
 import type { HandlerEvent } from "@netlify/functions";
 import {
-  PUBLIC_DONATION_PRICE_ID,
   buildCheckoutSessionParams,
   regionCurrency,
   toStripeAmount,
@@ -35,7 +34,6 @@ export async function startCheckout(
     siteUrl: origin,
     pmcOverseas: process.env.STRIPE_PMC_OVERSEAS,
     pmcChina: process.env.STRIPE_PMC_CHINA,
-    donationPriceId: process.env.STRIPE_DONATION_PRICE_ID || PUBLIC_DONATION_PRICE_ID,
   });
 
   try {

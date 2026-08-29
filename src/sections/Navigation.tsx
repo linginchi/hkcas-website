@@ -69,14 +69,7 @@ export function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => go("#philanthropy")}
-              className="px-4 py-2 text-sm tracking-wide transition-all duration-300 rounded-full border text-[#1a1a1a] border-[#D4A853]/40 hover:border-[#D4A853]/70"
-            >
-              {t("hero.cta.donate")}
-            </button>
+          <div className="hidden lg:flex items-center">
             <button
               type="button"
               onClick={() => setLanguage(language === "zh" ? "en" : "zh")}
@@ -114,13 +107,6 @@ export function Navigation() {
               {t(link.key)}
             </a>
           ))}
-          <button
-            type="button"
-            onClick={() => go("#philanthropy")}
-            className="block py-2 text-[#1a1a1a]"
-          >
-            {t("hero.cta.donate")}
-          </button>
           <button
             type="button"
             onClick={() => setLanguage(language === "zh" ? "en" : "zh")}

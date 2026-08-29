@@ -43,7 +43,6 @@
 | `STRIPE_WEBHOOK_SECRET` | Webhook 验签 |
 | `STRIPE_PMC_OVERSEAS` | 境外 PMC ID（可选，未填则用账户默认） |
 | `STRIPE_PMC_CHINA` | 境内 PMC ID（可选） |
-| `STRIPE_DONATION_PRICE_ID` | 官网公开捐赠 Price（Donation / HKD 1000） |
 | `STAFF_GATE_SECRET` | `/staff/pay` 密码 |
 | `RESEND_API_KEY` | 联系表单发信 |
 | `CONTACT_FROM_EMAIL` | 发件人，需在 Resend 验证域名 |
@@ -53,9 +52,7 @@
 
 ## 5. 使用方式
 
-官网「公益捐赠」可直接捐 **HKD 1,000**，走 Stripe Product `Donation`（Price `price_1U8WTo4HKHE36SPecSp13et7`）。付完显示「感谢您的捐赠」。
-
-咨询费仍由员工在 `https://hkcas.org/staff/pay` 按金额生成链接，付完显示咨询费已收到，不会写成捐赠。
+Stripe 仅用于咨询费。员工在 `https://hkcas.org/staff/pay` 按金额生成链接，客户付完显示咨询费已收到。官网不接受网上捐款。
 
 ## 6. 上线前抽测
 
