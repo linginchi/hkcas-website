@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import Stripe from "stripe";
 import type { HandlerContext, HandlerEvent, HandlerResponse } from "@netlify/functions";
-import { handler } from "./stripe-webhook.ts";
+import { handler } from "./functions/stripe-webhook.ts";
 
 function signedEvent(type: string, metadata: Record<string, string> = {}) {
   const secret = "whsec_test_secret";
