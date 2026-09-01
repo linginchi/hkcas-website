@@ -25,7 +25,9 @@
 
 ## 3. Webhook
 
-1. Endpoint URL：`https://hkcas.org/api/payments/webhook`
+1. Endpoint URL：`https://hkcas.netlify.app/api/payments/webhook`
+
+   使用 Netlify 默认域名，而不是 `https://hkcas.org`。自定义域名目前由 Let's Encrypt Generation Y（YE2 / ISRG Root YE）签发，Stripe 的 webhook 投递端不信任这条链，会报 TLS/other errors。`*.netlify.app` 使用 DigiCert，Stripe 可以完成握手。函数本身仍是同一套 `/api/payments/webhook`。
 2. 事件：
    - `checkout.session.completed`
    - `checkout.session.expired`

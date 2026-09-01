@@ -1,8 +1,8 @@
 import type { Handler } from "@netlify/functions";
+import Stripe from "stripe";
 import { paymentStatusFromEvent } from "../../shared/payments.ts";
 import { json, requestBody } from "./lib/http.ts";
 import { updatePayment } from "./lib/store.ts";
-import { getStripe } from "./lib/stripe.ts";
 
 function paymentIdFromObject(object: {
   metadata?: { paymentId?: string };
@@ -23,8 +23,7 @@ export const handler: Handler = async (event) => {
 
   let stripeEvent;
   try {
-    const stripe = getStripe();
-    stripeEvent = await stripe.webhooks.constructEventAsync(
+    stripeEvent = await Stripe.webhooks.constructEventAsync(
       requestBody(event),
       signature,
       webhookSecret,
@@ -47,13 +46,17 @@ export const handler: Handler = async (event) => {
     return json(200, { received: true, unmatched: stripeEvent.type });
   }
 
-  await updatePayment(
-    paymentId,
-    {
-      status,
-      stripeCheckoutSessionId: object.id,
-    },
-    event,
-  );
+  try {
+    await updatePayment(
+      paymentId,
+      {
+        status,
+        stripeCheckoutSessionId: object.id,
+      },
+      event,
+    );
+  } catch {
+    return json(500, { error: "Failed to persist payment status" });
+  }
   return json(200, { received: true, paymentId, status });
 };
