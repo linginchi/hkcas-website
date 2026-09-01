@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import Stripe from "stripe";
-import type { HandlerEvent } from "@netlify/functions";
+import type { HandlerContext, HandlerEvent, HandlerResponse } from "@netlify/functions";
 import { handler } from "./stripe-webhook.ts";
 
 function signedEvent(type: string, metadata: Record<string, string> = {}) {
@@ -30,11 +30,14 @@ describe("stripe webhook handler", () => {
     process.env.STRIPE_WEBHOOK_SECRET = secret;
 
     try {
-      const result = await handler({
-        httpMethod: "POST",
-        headers: { "stripe-signature": signature },
-        body: payload,
-      } as HandlerEvent);
+      const result = (await handler(
+        {
+          httpMethod: "POST",
+          headers: { "stripe-signature": signature },
+          body: payload,
+        } as unknown as HandlerEvent,
+        {} as HandlerContext,
+      )) as HandlerResponse;
 
       expect(result.statusCode).toBe(200);
       expect(JSON.parse(result.body ?? "{}")).toMatchObject({
