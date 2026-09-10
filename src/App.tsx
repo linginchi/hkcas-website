@@ -5,16 +5,22 @@ import { PayRedirectPage } from "./pages/PayRedirectPage";
 import { PaySuccessPage } from "./pages/PaySuccessPage";
 import { StaffPayPage } from "./pages/StaffPayPage";
 
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/staff/pay" element={<StaffPayPage />} />
+      <Route path="/pay/success" element={<PaySuccessPage />} />
+      <Route path="/pay/cancel" element={<PayCancelPage />} />
+      <Route path="/pay/:id" element={<PayRedirectPage />} />
+    </Routes>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/staff/pay" element={<StaffPayPage />} />
-        <Route path="/pay/success" element={<PaySuccessPage />} />
-        <Route path="/pay/cancel" element={<PayCancelPage />} />
-        <Route path="/pay/:id" element={<PayRedirectPage />} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   );
 }

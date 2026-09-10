@@ -5,6 +5,15 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col overflow-hidden bg-[#FFF9E6]">
+      {/* 主標題與簡介僅存在於背景圖，需另給可讀文本供螢幕閱讀器與爬蟲取用 */}
+      <div className="sr-only">
+        <h1>
+          {t("hero.title")}
+          {t("hero.subtitle")}
+        </h1>
+        <p>{t("hero.badge")}</p>
+        <p>{t("hero.description")}</p>
+      </div>
       <div className="parallax-bg absolute inset-0 w-full h-full">
         <div
           className="absolute inset-x-0 top-0 flex items-start justify-center pt-16 sm:pt-20"
@@ -12,7 +21,7 @@ export function Hero() {
         >
           <img
             src="/hero-bg.jpg"
-            alt="Hero Background"
+            alt={`${t("hero.title")}${t("hero.subtitle")}`}
             className="object-contain max-h-full"
             style={{ maxWidth: "min(95%, 1200px)" }}
           />

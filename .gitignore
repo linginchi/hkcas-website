@@ -21,6 +21,7 @@ tmp/
 # Node
 node_modules/
 dist/
+dist-ssr/
 *.local
 
 # Env / secrets

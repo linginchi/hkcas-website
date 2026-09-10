@@ -7,6 +7,16 @@
   node_bundler = "esbuild"
   included_files = ["shared/**"]
 
+[[headers]]
+  for = "/staff/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/pay/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
 [[redirects]]
   from = "/api/contact"
   to = "/.netlify/functions/contact"
@@ -35,6 +45,17 @@
 [[redirects]]
   from = "/api/payments/status"
   to = "/.netlify/functions/get-payment"
+  status = 200
+
+# 交易頁未預渲染，須送空殼，避免收到首頁預渲染 HTML 造成 hydrate 失配。
+[[redirects]]
+  from = "/staff/*"
+  to = "/app.html"
+  status = 200
+
+[[redirects]]
+  from = "/pay/*"
+  to = "/app.html"
   status = 200
 
 [[redirects]]
