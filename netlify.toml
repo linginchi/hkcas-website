@@ -47,6 +47,17 @@
   to = "/.netlify/functions/get-payment"
   status = 200
 
+# 英文首頁有獨立可索引的 URL，指向自己的預渲染檔案。
+[[redirects]]
+  from = "/en"
+  to = "/en.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/"
+  to = "/en.html"
+  status = 200
+
 # 交易頁未預渲染，須送空殼，避免收到首頁預渲染 HTML 造成 hydrate 失配。
 [[redirects]]
   from = "/staff/*"

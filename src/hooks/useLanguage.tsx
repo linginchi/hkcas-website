@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 import { translations, type Language } from "../i18n/translations";
 
 type LanguageContextValue = {
@@ -22,8 +22,16 @@ function lookup(language: Language, key: string): string {
   return typeof value === "string" ? value : key;
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("zh");
+// 語言由路由決定，故由外層傳入；見 App.tsx 的 LocalizedApp。
+export function LanguageProvider({
+  language,
+  setLanguage,
+  children,
+}: {
+  language: Language;
+  setLanguage: (language: Language) => void;
+  children: ReactNode;
+}) {
   const t = (key: string) => lookup(language, key);
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
