@@ -11,6 +11,7 @@ export function Services() {
     { number: "01", ...copy.service1 },
     { number: "02", ...copy.service2 },
     { number: "03", ...copy.service3 },
+    { number: "04", ...copy.service4 },
   ];
 
   const goContact = () => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +43,7 @@ export function Services() {
           <p className="text-lg text-white/60 max-w-2xl mx-auto font-serif">{t("services.subtitle")}</p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {items.map((item, index) => (
             <div
               key={item.number}

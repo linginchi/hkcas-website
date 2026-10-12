@@ -2,6 +2,7 @@ import { Globe, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../hooks/useLanguage";
+import { isLocalizedPath } from "../i18n/site-meta";
 
 const LINKS = [
   { key: "nav.home", href: "#home" },
@@ -18,7 +19,7 @@ export function Navigation() {
   const [open, setOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
-  const onHome = location.pathname === "/";
+  const onHome = isLocalizedPath(location.pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);

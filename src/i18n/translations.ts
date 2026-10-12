@@ -89,7 +89,7 @@ export const translations = {
     services: {
       sectionTitle: "专业服务",
       title: "业务服务",
-      subtitle: "三大核心业务板块，全方位助力绿色发展与数字转型",
+      subtitle: "四大核心业务板块，全方位助力绿色发展、数字转型与企业出海",
       service1: {
         title: "地方实业资产的“市场化并购与重组”业务",
         description:
@@ -107,8 +107,70 @@ export const translations = {
           "聚焦粤港澳大湾区，整合“分布式绿电”与“金融算力”。在绿色能源节点上部署高附加值的数字基础设施。",
         features: ["分布式绿电", "金融算力", "数字基建", "资产管理"],
       },
+      service4: {
+        title: "企业出海服务平台：地方政府、央企智库与国际平台三方共建",
+        description:
+          "围绕共建“一带一路”高质量发展，联合地方政府与央企智库，搭建服务地方优势产业“抱团出海”的综合平台，提供国别研判、项目评审、跨境通道与绿色标准支持，并以试点先行、逐步复制的方式稳步推进。",
+        features: ["地方政府共建", "央企智库赋能", "跨境通道", "试点复制"],
+      },
       cta: "需要了解更多业务详情？欢迎与我们联系",
       ctaButton: "咨询服务",
+    },
+    platform: {
+      sectionTitle: "共建共享",
+      title: "企业出海服务平台",
+      subtitle: "汇聚央企智库、国际平台与地方政府三方优势，服务共建“一带一路”国家的产业合作",
+      intro:
+        "地方制造业产能充沛、产业门类齐全，亟需权威平台与海外通道，帮助本地企业开拓国际市场。平台以“政府主导、央企赋能、市场运作、试点先行”为原则，以“地方有的，就是共建国家需要的”为理念，将地方优势产业作为供给端，将共建“一带一路”国家的建设与发展需求作为需求端，帮助企业在海外市场找准位置、抢抓机遇。",
+      rolesTitle: "三方分工",
+      roles: [
+        {
+          name: "央企智库",
+          tag: "规划 · 把关 · 撮合",
+          points: [
+            "牵头国别研判、产业出海布局与服务标准设计",
+            "开展项目可行性论证、风险评估、合规审查与后评价",
+            "链接金融机构、海外园区与国际机构，提供信用背书",
+          ],
+        },
+        {
+          name: "国科绿色（HKCAS）",
+          tag: "枢纽 · 标准 · 通道",
+          points: [
+            "依托香港国际窗口，对接海内外科技成果与产业资源",
+            "输出绿色园区、绿电算力、节能环保等标准与合规体系",
+            "为项目提供跨境资金、贸易结算与国际化运营支持",
+          ],
+        },
+        {
+          name: "地方政府",
+          tag: "供给 · 信用 · 组织",
+          points: [
+            "组织本地优势产能与企业协同“抱团出海”",
+            "提供政策支持、政府背书与营商环境保障",
+            "统筹产业资源，对接商务、国资、金融等部门",
+          ],
+        },
+      ],
+      architectureTitle: "“母平台 + 国别运营主体”双层架构",
+      architecture: [
+        {
+          title: "母平台",
+          description: "由三方共同设立，承担顶层设计、标准输出、资源撮合与品牌背书，保持中立与权威。",
+        },
+        {
+          title: "国别运营主体",
+          description: "面向具体市场设立，承接合同与项目运营，践行“平台归平台、经营归经营”。",
+        },
+      ],
+      pathTitle: "推进路径",
+      path: [
+        { stage: "启动期", description: "签署合作框架，设立平台，完成可行性论证，组织首批企业清单。" },
+        { stage: "样板期", description: "落地首个样板项目，跑通跨境结算与合规通道，形成可复制范本。" },
+        { stage: "扩展期", description: "向更多地方和更多共建“一带一路”国家复制，开放合作接口。" },
+      ],
+      note: "平台目前处于试点筹备阶段，具体合作安排以各方正式协议为准。",
+      cta: "洽谈合作",
     },
     cases: {
       sectionTitle: "项目实践",
@@ -231,6 +293,7 @@ export const translations = {
         "地方实业资产并购与重组",
         "零碳产业园区全周期服务",
         "跨境绿电+算力数字基建",
+        "企业出海服务平台",
         "绿色技术咨询与投资",
       ],
       cta: { title: "有合作意向？立即联系我们", button: "立即咨询" },
@@ -361,7 +424,7 @@ export const translations = {
       sectionTitle: "Professional Services",
       title: "Our Services",
       subtitle:
-        "Three core business segments, comprehensively empowering green development and digital transformation",
+        "Four core business segments, comprehensively empowering green development, digital transformation and overseas expansion of enterprises",
       service1: {
         title: "Market-oriented M&A and Restructuring of Local Industrial Assets",
         description:
@@ -386,8 +449,90 @@ export const translations = {
           "Asset Management",
         ],
       },
+      service4: {
+        title: "Enterprise Overseas Expansion Platform, Co-built by Local Government, a Central-SOE Think Tank and an International Platform",
+        description:
+          'In support of high-quality Belt and Road cooperation, we work with local governments and a central-SOE think tank to build an integrated platform that helps local competitive industries "go global" together, providing country-risk assessment, project review, cross-border channels and green standards, advanced through a pilot-first, replicate-step-by-step approach.',
+        features: [
+          "Local Government Co-building",
+          "Think-tank Empowerment",
+          "Cross-border Channels",
+          "Pilot and Replicate",
+        ],
+      },
       cta: "Need more details about our services? Contact us today",
       ctaButton: "Consult Services",
+    },
+    platform: {
+      sectionTitle: "Co-build and Share",
+      title: "Enterprise Overseas Expansion Platform",
+      subtitle:
+        "Combining the strengths of a central-SOE think tank, an international platform and local government to serve industrial cooperation with Belt and Road countries",
+      intro:
+        'Local manufacturing is strong and diversified, and needs an authoritative platform and overseas channels to open international markets. Guided by the principles of government leadership, central-SOE empowerment, market-based operation and pilot-first rollout, and by the idea that "what the locality produces is what partner countries need", the platform treats local competitive industries as the supply side and the construction and development needs of Belt and Road countries as the demand side, helping enterprises find their place and seize opportunities abroad.',
+      rolesTitle: "Division of Roles",
+      roles: [
+        {
+          name: "Central-SOE Think Tank",
+          tag: "Plan · Review · Match",
+          points: [
+            "Leads country assessment, outbound industrial layout and service-standard design",
+            "Conducts feasibility studies, risk assessment, compliance review and post-evaluation",
+            "Connects financial institutions, overseas parks and international bodies, providing credit endorsement",
+          ],
+        },
+        {
+          name: "CAS Green Development (HKCAS)",
+          tag: "Hub · Standards · Channels",
+          points: [
+            "Uses Hong Kong as an international window to link technology and industrial resources at home and abroad",
+            "Provides green park, green power and computing, and energy-saving standards and compliance frameworks",
+            "Supports projects with cross-border funding, trade settlement and international operations",
+          ],
+        },
+        {
+          name: "Local Government",
+          tag: "Supply · Credit · Coordination",
+          points: [
+            "Organises competitive local capacity and enterprises to go global together",
+            "Provides policy support, government endorsement and a sound business environment",
+            "Coordinates industrial resources with commerce, state-asset and financial authorities",
+          ],
+        },
+      ],
+      architectureTitle: 'Two-tier Structure: "Parent Platform + Country Operating Entity"',
+      architecture: [
+        {
+          title: "Parent Platform",
+          description:
+            "Jointly established by the three parties to provide top-level design, standard-setting, resource matching and brand endorsement, remaining neutral and authoritative.",
+        },
+        {
+          title: "Country Operating Entity",
+          description:
+            'Established for a specific market to take on contracts and project operations, following the principle that "the platform is the platform, and operations are operations".',
+        },
+      ],
+      pathTitle: "Roadmap",
+      path: [
+        {
+          stage: "Launch",
+          description:
+            "Sign the cooperation framework, establish the platform, complete the feasibility study and compile the first list of enterprises.",
+        },
+        {
+          stage: "Pilot",
+          description:
+            "Deliver the first model project and establish cross-border settlement and compliance channels as a replicable template.",
+        },
+        {
+          stage: "Expansion",
+          description:
+            "Replicate to more localities and more Belt and Road countries, and open further cooperation interfaces.",
+        },
+      ],
+      note: "The platform is currently in pilot preparation. Specific arrangements are subject to formal agreements among the parties.",
+      cta: "Discuss Cooperation",
     },
     cases: {
       sectionTitle: "Case Studies",
@@ -516,6 +661,7 @@ export const translations = {
         "Industrial Asset M&A and Restructuring",
         "Zero-Carbon Industrial Park Services",
         "Cross-border Green Power + Computing Infrastructure",
+        "Enterprise Overseas Expansion Platform",
         "Green Technology Consulting & Investment",
       ],
       cta: { title: "Interested in partnership? Contact us now", button: "Contact Now" },

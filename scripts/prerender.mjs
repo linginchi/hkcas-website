@@ -79,6 +79,34 @@ function buildHead(html, meta) {
   ]);
 }
 
+/** JSON-LD 內容依語言變化，否則英文頁會帶著中文實體描述。 */
+function localizeJsonLd(html, meta) {
+  const pattern = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
+  let seen = 0;
+  const out = html.replace(pattern, (_, body) => {
+    seen += 1;
+    const data = JSON.parse(body);
+    const org = meta.organization;
+    if (data["@type"] === "Organization") {
+      data.name = org.name;
+      data.description = org.description;
+      data.knowsAbout = org.knowsAbout;
+      data.address = {
+        ...data.address,
+        addressRegion: org.addressRegion,
+        addressLocality: org.addressLocality,
+      };
+    } else if (data["@type"] === "WebSite") {
+      data.name = org.name;
+    }
+    return `<script type="application/ld+json">${JSON.stringify(data, null, 2)}</script>`;
+  });
+  if (seen < 2) {
+    throw new Error("prerender: 於 dist/index.html 找不到足夠的 JSON-LD 區塊");
+  }
+  return out;
+}
+
 function write(target, html) {
   const targetPath = resolve(root, target);
   mkdirSync(dirname(targetPath), { recursive: true });
@@ -97,7 +125,7 @@ for (const meta of ROUTE_META) {
   }
 
   // 標記本檔對應的路由，客戶端據此判斷能否 hydrate（見 src/main.tsx）。
-  const html = buildHead(template, meta).replace(
+  const html = localizeJsonLd(buildHead(template, meta), meta).replace(
     ROOT_PLACEHOLDER,
     `<div id="root" data-prerendered-path="${escapeAttr(meta.path)}">${body}</div>`,
   );
