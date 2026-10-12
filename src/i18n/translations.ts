@@ -46,6 +46,7 @@ export const translations = {
       title: "关于我们",
       subtitle: "从2017年论坛倡议到2019年正式注册，我们始终致力于推动绿色科技与产业发展",
       historyTitle: "历史沿革",
+      forumAlt: "2017年科技“一带一路”与粤港澳大湾区创新论坛现场",
       history1:
         "2017年11月30日，在公司联合创始人的倡议和赞助下，香港政府旗下香港科技园公司与国科控股合办“科技「一带一路」与粤港澳大湾区创新论坛”。",
       history2:
@@ -183,7 +184,7 @@ export const translations = {
         status: "已合作",
         location: "浙江省杭州市",
         description:
-          "中咨产融与国科绿色携手产业投资人，共同完成对杭州市市政工程集团的并购项目。通过“咨询+投资+运营”全周期赋能，为产业投资人提供更优的确定性保障，实现资产的保值增值。",
+          "中咨产融与国科绿色携手产业投资人，共同完成对杭州市市政工程集团的并购项目。通过“咨询+投资+运营”全周期赋能，为产业投资人提供专业的投后管理与运营支持，助力资产稳健发展。",
         highlights: {
           qualification: { label: "特级资质", value: "市政公用工程施工总承包特级" },
           history: { label: "历史底蕴", value: "60余年发展历程" },
@@ -204,19 +205,19 @@ export const translations = {
         status: "规划中",
         location: "湖北省恩施州建始县",
         description:
-          "中咨产融与国科绿色携手地方政府，合资开发建始化工产业园区。通过专业的咨询、投资、实施、运营全周期服务，为产业投资人提供确定性保障，助力地方经济高质量转型。项目正在前期规划阶段，敬请期待。",
+          "中咨产融与国科绿色携手地方政府，合资开发建始化工产业园区。通过专业的咨询、投资、实施、运营全周期服务，助力地方经济高质量转型。项目目前处于前期规划阶段，后续进展将适时发布。",
         highlights: {
-          scale: { label: "项目规模", value: "待定" },
+          scale: { label: "项目规模", value: "以正式规划为准" },
           location: { label: "地理位置", value: "建始县" },
           period: { label: "建设周期", value: "规划中" },
         },
         details: [
-          "公共服务园区：规划中",
-          "物流仓储中心：规划中",
-          "市政工程：规划中",
-          "安防工程：规划中",
+          "拟建内容：公共服务园区",
+          "拟建内容：物流仓储中心",
+          "拟建内容：市政工程",
+          "拟建内容：安防工程",
         ],
-        comingSoon: "敬请期待",
+        comingSoon: "后续进展将适时发布",
       },
       cta: "期待与您携手，共创绿色发展新篇章",
       ctaButton: "洽谈合作",
@@ -381,6 +382,7 @@ export const translations = {
       subtitle:
         "From the 2017 forum initiative to official registration in 2019, we have been dedicated to promoting green technology and industrial development",
       historyTitle: "Our History",
+      forumAlt: "The 2017 Technology Belt and Road and Greater Bay Area Innovation Forum",
       history1:
         "On November 30, 2017, under the initiative and sponsorship of the company's co-founders, Hong Kong Science and Technology Parks Corporation and CAS Holdings co-hosted the \"Technology Belt and Road and Guangdong-Hong Kong-Macao Greater Bay Area Innovation Forum\".",
       history2:
@@ -545,7 +547,7 @@ export const translations = {
         status: "Active",
         location: "Hangzhou, Zhejiang Province",
         description:
-          'CIECC Industry-Finance and CAS Green, together with industrial investors, completed the acquisition of Hangzhou Municipal Engineering Group. Through our full-cycle "Consulting + Investment + Operations" model, we provide investors with greater certainty and safeguard their interests while achieving asset appreciation.',
+          'CIECC Industry-Finance and CAS Green, together with industrial investors, completed the acquisition of Hangzhou Municipal Engineering Group. Through our full-cycle "Consulting + Investment + Operations" model, we provide investors with professional post-investment management and operational support for steady asset development.',
         highlights: {
           qualification: { label: "Qualification", value: "Special Class Contractor" },
           history: { label: "History", value: "60+ Years" },
@@ -566,19 +568,19 @@ export const translations = {
         status: "In Planning",
         location: "Jianshi County, Enshi Prefecture, Hubei Province",
         description:
-          "CIECC Industry-Finance and CAS Green, together with local government, are jointly developing the Jianshi Chemical Industrial Park. Through professional consulting, investment, implementation, and operations services, we provide certainty for industrial investors and support high-quality local economic transformation. Project is in early planning stage.",
+          "CIECC Industry-Finance and CAS Green, together with local government, are jointly developing the Jianshi Chemical Industrial Park. Through professional consulting, investment, implementation, and operations services, we support high-quality local economic transformation. The project is currently in early planning, with updates to follow.",
         highlights: {
-          scale: { label: "Scale", value: "TBD" },
+          scale: { label: "Scale", value: "Subject to formal planning" },
           location: { label: "Location", value: "Jianshi County" },
           period: { label: "Timeline", value: "In Planning" },
         },
         details: [
-          "Public Service Zone: In planning",
-          "Logistics & Warehousing: In planning",
-          "Municipal Engineering: In planning",
-          "Security Systems: In planning",
+          "Planned component: Public Service Zone",
+          "Planned component: Logistics & Warehousing",
+          "Planned component: Municipal Engineering",
+          "Planned component: Security Systems",
         ],
-        comingSoon: "Coming Soon",
+        comingSoon: "Updates to follow",
       },
       cta: "Looking forward to partnering with you to create a new chapter in green development",
       ctaButton: "Discuss Partnership",

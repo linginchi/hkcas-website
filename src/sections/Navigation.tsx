@@ -46,11 +46,11 @@ export function Navigation() {
         <div className="flex items-center justify-between h-20">
           {onHome ? (
             <a href="#home" onClick={(e) => { e.preventDefault(); go("#home"); }} className="flex items-center">
-              <img src="/logo-hkcas.png" alt="HKCAS" className="h-12 w-auto object-contain" />
+              <img src="/logo-hkcas.png" alt="HKCAS" width={38} height={48} className="h-12 w-auto object-contain" />
             </a>
           ) : (
             <Link to="/" className="flex items-center">
-              <img src="/logo-hkcas.png" alt="HKCAS" className="h-12 w-auto object-contain" />
+              <img src="/logo-hkcas.png" alt="HKCAS" width={38} height={48} className="h-12 w-auto object-contain" />
             </Link>
           )}
 

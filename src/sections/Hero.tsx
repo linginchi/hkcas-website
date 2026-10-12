@@ -22,6 +22,9 @@ export function Hero() {
           <img
             src="/hero-bg.jpg"
             alt={`${t("hero.title")}${t("hero.subtitle")}`}
+            width={1024}
+            height={1008}
+            fetchPriority="high"
             className="object-contain max-h-full"
             style={{ maxWidth: "min(95%, 1200px)" }}
           />

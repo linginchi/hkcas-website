@@ -24,7 +24,15 @@ export function About() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="rounded-3xl overflow-hidden shadow-xl">
-            <img src="/forum-photo.png" alt="Forum" className="w-full h-auto object-cover" />
+            <img
+              src="/forum-photo.webp"
+              alt={t("about.forumAlt")}
+              width={660}
+              height={435}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto object-cover"
+            />
           </div>
           <div>
             <h3 className="text-2xl md:text-3xl font-medium mb-6">{t("about.historyTitle")}</h3>

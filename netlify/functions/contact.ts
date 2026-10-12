@@ -1,5 +1,5 @@
 import type { Handler } from "@netlify/functions";
-import { validateContact } from "../../shared/payments.ts";
+import { contactLanguage, isContactSpam, validateContact } from "../../shared/payments.ts";
 import { json, requestBody } from "./lib/http.ts";
 
 const TO = "contact@hkcas.org";
@@ -14,6 +14,10 @@ export const handler: Handler = async (event) => {
     raw = JSON.parse(requestBody(event) || "{}");
   } catch {
     return json(400, { error: "Invalid JSON" });
+  }
+
+  if (isContactSpam(raw)) {
+    return json(200, { ok: true });
   }
 
   const parsed = validateContact(raw);
@@ -37,7 +41,10 @@ export const handler: Handler = async (event) => {
       from,
       to: [TO],
       reply_to: parsed.value.email,
-      subject: `HKCAS 网站留言：${parsed.value.name}`,
+      subject:
+        contactLanguage(raw) === "en"
+          ? `HKCAS website message: ${parsed.value.name}`
+          : `HKCAS 网站留言：${parsed.value.name}`,
       text: [
         `姓名: ${parsed.value.name}`,
         `邮箱: ${parsed.value.email}`,

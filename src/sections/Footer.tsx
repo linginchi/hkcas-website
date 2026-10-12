@@ -21,7 +21,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-4 gap-12 mb-12">
           <div className="lg:col-span-2">
-            <img src="/logo-hkcas.png" alt="HKCAS" className="h-14 w-auto object-contain mb-6 brightness-0 invert" />
+            <img src="/logo-hkcas.png" alt="HKCAS" width={45} height={56} loading="lazy" className="h-14 w-auto object-contain mb-6 brightness-0 invert" />
             <p className="text-white/70 font-serif leading-relaxed max-w-lg">{t("footer.description")}</p>
           </div>
           <div>

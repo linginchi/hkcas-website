@@ -10,7 +10,7 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", website: "" });
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -21,14 +21,14 @@ export function Contact() {
     setSending(true);
     setError("");
     try {
-      const { response, payload } = await postJson("/api/contact", formData, {
+      const { response, payload } = await postJson("/api/contact", { ...formData, lang: language }, {
         signal: AbortSignal.timeout(12000),
       });
       if (!response.ok || payload.ok !== true) {
         throw new Error(typeof payload.error === "string" ? payload.error : t("contact.form.error"));
       }
       setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "", website: "" });
     } catch (err) {
       setError(err instanceof Error ? err.message : t("contact.form.error"));
     } finally {
@@ -89,6 +89,17 @@ export function Contact() {
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="space-y-6">
+                  {/* 蜜罐欄位：真人看不見也不會填，機器人常會填，伺服器據此丟棄 */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.website}
+                    onChange={onChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                  />
                   <div className="grid sm:grid-cols-2 gap-6">
                     <label className="space-y-2 block">
                       <span className="text-sm">

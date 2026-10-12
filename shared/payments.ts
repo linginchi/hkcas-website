@@ -213,6 +213,18 @@ export type ContactInput = {
   message: string;
 };
 
+/** 蜜罐欄位被填寫代表是機器人；呼叫端應假裝成功並丟棄，避免對方調整手法。 */
+export function isContactSpam(input: unknown): boolean {
+  if (!input || typeof input !== "object") return false;
+  const website = (input as Record<string, unknown>).website;
+  return typeof website === "string" && website.trim() !== "";
+}
+
+export function contactLanguage(input: unknown): "zh" | "en" {
+  if (!input || typeof input !== "object") return "zh";
+  return (input as Record<string, unknown>).lang === "en" ? "en" : "zh";
+}
+
 export function validateContact(
   input: unknown,
 ): { ok: true; value: ContactInput } | { ok: false; error: string } {
