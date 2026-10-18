@@ -5,7 +5,7 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col overflow-hidden bg-[#FFF9E6]">
-      {/* 主標題與簡介僅存在於背景圖，需另給可讀文本供螢幕閱讀器與爬蟲取用 */}
+      {/* 主標題與簡介僅存在於背景圖，需另給可讀文本供螢幕閱讀器與爬蟲取用；口號為真文字，隨語言切換 */}
       <div className="sr-only">
         <h1>
           {t("hero.title")}
@@ -16,18 +16,21 @@ export function Hero() {
       </div>
       <div className="parallax-bg absolute inset-0 w-full h-full">
         <div
-          className="absolute inset-x-0 top-0 flex items-start justify-center pt-16 sm:pt-20"
-          style={{ height: "calc(100% - 140px)" }}
+          className="absolute inset-x-0 top-0 flex flex-col items-center justify-start pt-16 sm:pt-20 px-4"
+          style={{ height: "calc(100% - 150px)" }}
         >
           <img
             src="/hero-bg.jpg"
             alt={`${t("hero.title")}${t("hero.subtitle")}`}
             width={1024}
-            height={1008}
+            height={893}
             fetchPriority="high"
-            className="object-contain max-h-full"
-            style={{ maxWidth: "min(95%, 1200px)" }}
+            className="object-contain min-h-0"
+            style={{ maxWidth: "min(95%, 1200px)", maxHeight: "calc(100% - 4.5rem)" }}
           />
+          <p className="mt-4 sm:mt-5 text-center text-xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-[#1a1a1a]">
+            {t("hero.slogan")}
+          </p>
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#FFF9E6]/30 via-transparent to-[#FFF9E6]/80 pointer-events-none" />
       </div>

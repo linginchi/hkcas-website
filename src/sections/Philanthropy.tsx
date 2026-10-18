@@ -49,6 +49,7 @@ export function Philanthropy() {
           </span>
           <h2 className="section-title">{t("philanthropy.title")}</h2>
           <p className="section-subtitle max-w-3xl mx-auto">{t("philanthropy.subtitle")}</p>
+          <p className="mt-4 text-sm text-[#8B7355] font-serif max-w-3xl mx-auto">{t("philanthropy.note")}</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">

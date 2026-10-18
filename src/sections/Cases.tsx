@@ -24,7 +24,8 @@ export function Cases() {
           <p className="section-subtitle max-w-3xl mx-auto">{t("cases.subtitle")}</p>
         </div>
 
-        <div className="space-y-10">
+        <h3 className="text-2xl md:text-3xl font-medium mb-8">{copy.domesticTitle}</h3>
+        <div className="space-y-10 mb-16">
           <article className="bg-white/80 rounded-3xl p-8 md:p-12 border border-[#E8DFD0]">
             <div className="flex flex-wrap gap-3 mb-4 text-sm">
               <span className="px-3 py-1 rounded-full bg-[#D4A853] text-white">{copy.case2.status}</span>
@@ -49,6 +50,41 @@ export function Cases() {
             </ul>
           </article>
         </div>
+
+        <h3 className="text-2xl md:text-3xl font-medium mb-8">{copy.internationalTitle}</h3>
+        <div className="space-y-10 mb-6">
+          {copy.international.map((item) => (
+            <article key={item.title} className="bg-white/80 rounded-3xl overflow-hidden border border-[#E8DFD0] md:grid md:grid-cols-5">
+              <div className="md:col-span-2 bg-[#F6F1E4] p-4 flex flex-col gap-4 justify-center">
+                {item.photos.map((photo) => (
+                  <figure key={photo.src}>
+                    <img src={photo.src} alt={photo.caption} loading="lazy" decoding="async" className="w-full h-auto rounded-xl" />
+                    <figcaption className="mt-2 text-sm text-[#666666] font-serif">{photo.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <div className="p-8 md:p-10 md:col-span-3">
+                <div className="flex flex-wrap gap-3 mb-4 text-sm">
+                  <span className="px-3 py-1 rounded-full bg-[#2D4A3E] text-white">{item.status}</span>
+                  <span className="px-3 py-1 rounded-full bg-[#D4A853]/15 text-[#8B7355]">{item.category}</span>
+                  <span className="text-[#666666]">{item.location}</span>
+                </div>
+                <h4 className="text-2xl font-medium mb-2">{item.title}</h4>
+                <p className="text-[#8B7355] mb-5">{item.subtitle}</p>
+                <p className="text-[#666666] leading-relaxed font-serif mb-6">{item.description}</p>
+                <div className="grid sm:grid-cols-3 gap-4">
+                  {item.highlights.map((h) => (
+                    <div key={h.label}>
+                      <div className="text-sm text-[#8B7355] mb-1">{h.label}</div>
+                      <div className="font-medium">{h.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="text-center text-sm text-[#8B7355] font-serif">{copy.internationalNote}</p>
 
         <div className="text-center mt-16">
           <p className="section-subtitle mb-6">{t("cases.cta")}</p>

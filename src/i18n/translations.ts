@@ -14,6 +14,7 @@ export const translations = {
     },
     hero: {
       badge: "非盈利性质法人组织 · 香港注册担保有限公司",
+      slogan: "致力于发展阳光化的产业",
       title: "国科绿色发展国际实验室",
       subtitle: "（香港）有限公司",
       description:
@@ -234,10 +235,55 @@ export const translations = {
       note: "平台目前处于试点筹备阶段，具体合作安排以各方正式协议为准。",
       cta: "洽谈合作",
     },
+    international: {
+      sectionTitle: "全球伙伴",
+      title: "国际合作",
+      subtitle: "依托战略合作伙伴中咨公司的国际咨询实践与 HKCAS 国际合作部的政商网络，服务共建“一带一路”国家的产业合作",
+      galleryTitle: "实践图集",
+      note: "数据、图片及说明来源：国家一带一路战略部署及中咨实践（战略合作伙伴中咨公司），反映其咨询实践。",
+    },
     cases: {
       sectionTitle: "项目实践",
       title: "成功案例",
       subtitle: "携手行业领军企业，共同推动绿色发展与产业升级",
+      domesticTitle: "国内项目",
+      internationalTitle: "国际合作案例",
+      internationalNote: "以上国际案例为战略合作伙伴中咨公司的实践。图片及说明来源：国家一带一路战略部署及中咨实践。",
+      international: [
+        {
+          title: "为中巴经济走廊产业合作提供全过程咨询",
+          subtitle: "全过程咨询",
+          category: "国际合作",
+          status: "战略合作伙伴实践",
+          location: "巴基斯坦",
+          description:
+            "2016年，在国家发改委中巴经济走廊中方秘书处统筹下，成立了中咨公司牵头的中方专家组，为中巴产业及园区合作提供智力支持和全过程咨询，完成了产业合作发展、基础设施建设等一系列咨询任务；深入调研，与当地政府、企业等各个层面深入交流，分享中国经验，贡献中咨方案。",
+          highlights: [
+            { label: "咨询范围", value: "产业合作发展、基础设施建设" },
+            { label: "服务方式", value: "全过程咨询" },
+            { label: "启动年份", value: "2016" },
+          ],
+          photos: [{ src: "/intl/cpec-map.webp", caption: "中巴经济走廊项目地图" }],
+        },
+        {
+          title: "境外经贸合作区评估与规划",
+          subtitle: "评估体系与园区规划",
+          category: "国际合作",
+          status: "战略合作伙伴实践",
+          location: "共建“一带一路”国家",
+          description:
+            "受商务部委托，中咨公司连续7年开展境外经贸合作区评估，建立考核和评价体系，推动中资企业在14个国家的20个合作区获得中央财政资金支持。完成了中国匈牙利宝思德经贸合作区、印尼青山工业园、中国印尼农业产业合作区、俄罗斯龙跃林业合作区等10多家园区的规划研究编制工作。",
+          highlights: [
+            { label: "评估年限", value: "连续7年" },
+            { label: "获支持合作区", value: "20个（14个国家）" },
+            { label: "园区规划研究", value: "10余家" },
+          ],
+          photos: [
+            { src: "/intl/borsod-zone.webp", caption: "中国匈牙利宝思德经贸合作区" },
+            { src: "/intl/qingshan-park.webp", caption: "印尼青山工业园" },
+          ],
+        },
+      ],
       case2: {
         title: "湖北恩施建始化工产业园区",
         subtitle: "零碳产业园区全周期服务项目",
@@ -290,6 +336,7 @@ export const translations = {
       sectionTitle: "回馈社会",
       title: "公益捐赠",
       subtitle: "积极履行社会责任，支持教育、学术与创业发展",
+      note: "以下捐赠包括本实验室（HKCAS）的捐助人兼联合创办人的个人捐赠，以及实验室 HKCAS 的捐助。",
       donations: {
         education: "教育公益",
         organization: "社团组织",
@@ -388,6 +435,7 @@ export const translations = {
     },
     hero: {
       badge: "Non-profit Organisation · Hong Kong Company Limited by Guarantee",
+      slogan: "Dedicated to Developing Sunlit Industries",
       title: "CAS Laboratory of Green Development",
       subtitle: "International (Hong Kong) Ltd.",
       description:
@@ -635,10 +683,57 @@ export const translations = {
       note: "The platform is currently in pilot preparation. Specific arrangements are subject to formal agreements among the parties.",
       cta: "Discuss Cooperation",
     },
+    international: {
+      sectionTitle: "Global Partners",
+      title: "International Cooperation",
+      subtitle:
+        "Drawing on the international advisory practice of our strategic partner CIECC and the government-business network of HKCAS's International Cooperation team, we serve industrial cooperation with Belt and Road countries",
+      galleryTitle: "Project Gallery",
+      note: "Figures, images and captions: \"Belt and Road Strategic Deployment and CIECC Practice\" (国家一带一路战略部署及中咨实践), by our strategic partner CIECC, reflecting its advisory practice.",
+    },
     cases: {
       sectionTitle: "Case Studies",
       title: "Success Stories",
       subtitle: "Partnering with industry leaders to drive green development and industrial upgrading",
+      domesticTitle: "Domestic Projects",
+      internationalTitle: "International Cooperation",
+      internationalNote:
+        "The international cases above are the work of our strategic partner CIECC. Images and captions: \"Belt and Road Strategic Deployment and CIECC Practice\" (国家一带一路战略部署及中咨实践).",
+      international: [
+        {
+          title: "Full-process Advisory for Industrial Cooperation in the China-Pakistan Economic Corridor",
+          subtitle: "Full-process advisory",
+          category: "International Cooperation",
+          status: "Partner's Practice",
+          location: "Pakistan",
+          description:
+            "In 2016, under the coordination of the Chinese secretariat of the China-Pakistan Economic Corridor at the National Development and Reform Commission, a Chinese expert group led by CIECC was formed to provide intellectual support and full-process advisory for China-Pakistan industry and park cooperation, covering industrial cooperation and infrastructure development, with in-depth research and exchanges with local governments and enterprises to share China's experience.",
+          highlights: [
+            { label: "Scope", value: "Industrial cooperation and infrastructure" },
+            { label: "Service", value: "Full-process advisory" },
+            { label: "Started", value: "2016" },
+          ],
+          photos: [{ src: "/intl/cpec-map.webp", caption: "China-Pakistan Economic Corridor Project Map" }],
+        },
+        {
+          title: "Assessment and Planning of Overseas Economic and Trade Cooperation Zones",
+          subtitle: "Assessment framework and park planning",
+          category: "International Cooperation",
+          status: "Partner's Practice",
+          location: "Belt and Road countries",
+          description:
+            "Commissioned by the Ministry of Commerce, CIECC has assessed overseas economic and trade cooperation zones for seven consecutive years, established an evaluation framework, helped Chinese enterprises secure central government funding for 20 zones in 14 countries, and completed planning studies for more than ten parks, including the China-Hungary Borsod Economic and Trade Cooperation Zone, Indonesia Qingshan Industrial Park, the China-Indonesia Agricultural Industry Cooperation Zone and the Russia Longyue Forestry Cooperation Zone.",
+          highlights: [
+            { label: "Assessment", value: "7 consecutive years" },
+            { label: "Zones supported", value: "20 (in 14 countries)" },
+            { label: "Park planning studies", value: "10+" },
+          ],
+          photos: [
+            { src: "/intl/borsod-zone.webp", caption: "China-Hungary Borsod Economic and Trade Cooperation Zone" },
+            { src: "/intl/qingshan-park.webp", caption: "Indonesia Qingshan Industrial Park" },
+          ],
+        },
+      ],
       case2: {
         title: "Jianshi Chemical Industrial Park, Enshi, Hubei",
         subtitle: "Zero-Carbon Industrial Park Full-Cycle Service",
@@ -693,6 +788,7 @@ export const translations = {
       title: "Philanthropy",
       subtitle:
         "Actively fulfilling social responsibility, supporting education, academic research, and entrepreneurship",
+      note: "The donations below include personal donations by the donor and co-founder of the Laboratory (HKCAS) as well as donations by HKCAS itself.",
       donations: {
         education: "Education",
         organization: "Organizations",
