@@ -1,9 +1,11 @@
 import { Leaf, Sun } from "lucide-react";
 import { useInView } from "../hooks/useInView";
+import { translations } from "../i18n/translations";
 import { useLanguage } from "../hooks/useLanguage";
 
 export function MissionVision() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const capabilities = translations[language].mission.capabilities;
   const { ref, visible } = useInView<HTMLElement>();
 
   return (
@@ -36,6 +38,19 @@ export function MissionVision() {
             <h3 className="text-2xl font-medium mb-4">{t("mission.vision.title")}</h3>
             <p className="text-[#666666] leading-relaxed font-serif">{t("mission.vision.content")}</p>
           </div>
+        </div>
+
+        <div className="text-center mb-10">
+          <h3 className="text-2xl md:text-3xl font-medium mb-3">{capabilities.title}</h3>
+          <p className="text-[#666666] font-serif max-w-3xl mx-auto">{capabilities.subtitle}</p>
+        </div>
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {capabilities.items.map((item) => (
+            <div key={item.title} className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-[#E8DFD0]">
+              <h4 className="text-xl font-medium mb-3 text-[#2D4A3E]">{item.title}</h4>
+              <p className="text-[#666666] leading-relaxed font-serif">{item.description}</p>
+            </div>
+          ))}
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">

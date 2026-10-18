@@ -40,6 +40,7 @@ export function About() {
               <p>{t("about.history1")}</p>
               <p>{t("about.history2")}</p>
               <p>{t("about.history3")}</p>
+              <p>{t("about.structureNote")}</p>
             </div>
             <div className="grid grid-cols-3 gap-4 mt-10">
               <div>

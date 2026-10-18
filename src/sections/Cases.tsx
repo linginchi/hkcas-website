@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { translations } from "../i18n/translations";
 import { useInView } from "../hooks/useInView";
 import { useLanguage } from "../hooks/useLanguage";
@@ -26,39 +25,6 @@ export function Cases() {
         </div>
 
         <div className="space-y-10">
-          <article className="bg-white/80 rounded-3xl p-8 md:p-12 border border-[#E8DFD0]">
-            <div className="flex flex-wrap gap-3 mb-4 text-sm">
-              <span className="px-3 py-1 rounded-full bg-[#2D4A3E] text-white">{copy.case1.status}</span>
-              <span className="px-3 py-1 rounded-full bg-[#D4A853]/15 text-[#8B7355]">{copy.case1.category}</span>
-              <span className="text-[#666666]">{copy.case1.location}</span>
-            </div>
-            <h3 className="text-2xl md:text-3xl font-medium mb-2">{copy.case1.title}</h3>
-            <p className="text-[#8B7355] mb-6">{copy.case1.subtitle}</p>
-            <p className="text-[#666666] leading-relaxed font-serif mb-8">{copy.case1.description}</p>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {Object.values(copy.case1.highlights).map((item) => (
-                <div key={item.label}>
-                  <div className="text-sm text-[#8B7355] mb-1">{item.label}</div>
-                  <div className="font-medium">{item.value}</div>
-                </div>
-              ))}
-            </div>
-            <ul className="space-y-2 text-[#666666] font-serif mb-8 list-disc pl-5">
-              {copy.case1.details.map((detail) => (
-                <li key={detail}>{detail}</li>
-              ))}
-            </ul>
-            <a
-              href="http://www.hzszjt.cn"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-[#2D4A3E] font-medium"
-            >
-              {copy.case1.website}
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </article>
-
           <article className="bg-white/80 rounded-3xl p-8 md:p-12 border border-[#E8DFD0]">
             <div className="flex flex-wrap gap-3 mb-4 text-sm">
               <span className="px-3 py-1 rounded-full bg-[#D4A853] text-white">{copy.case2.status}</span>

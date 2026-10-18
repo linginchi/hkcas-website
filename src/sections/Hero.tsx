@@ -41,7 +41,7 @@ export function Hero() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-4xl md:text-5xl font-medium text-[#2D4A3E]">4</div>
+              <div className="text-2xl sm:text-4xl md:text-5xl font-medium text-[#2D4A3E]">5</div>
               <div className="text-[#1a1a1a] text-xs sm:text-sm md:text-base mt-1 sm:mt-2 font-serif">
                 {t("hero.stats.business")}
               </div>

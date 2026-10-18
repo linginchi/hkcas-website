@@ -31,3 +31,11 @@ dist-ssr/
 
 # Netlify
 .netlify/
+
+# Internal source material (not for the repo)
+docs/*.key
+docs/*.docx
+docs/~$*
+/CIECC_CAS_Intro_corrected.docx
+.claude/
+.playwright-cli/

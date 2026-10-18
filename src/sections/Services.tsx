@@ -12,6 +12,7 @@ export function Services() {
     { number: "02", ...copy.service2 },
     { number: "03", ...copy.service3 },
     { number: "04", ...copy.service4 },
+    { number: "05", ...copy.service5 },
   ];
 
   const goContact = () => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
@@ -36,9 +37,6 @@ export function Services() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-block px-4 py-2 bg-white/10 text-[#D4A853] text-sm rounded-full mb-6 font-serif">
-            {t("services.sectionTitle")}
-          </span>
           <h2 className="text-4xl md:text-5xl font-medium text-white mb-4">{t("services.title")}</h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto font-serif">{t("services.subtitle")}</p>
         </div>

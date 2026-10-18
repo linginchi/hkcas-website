@@ -8,6 +8,7 @@ const LINKS = [
   { key: "nav.home", href: "#home" },
   { key: "nav.about", href: "#about" },
   { key: "nav.services", href: "#services" },
+  { key: "nav.companies", href: "#companies" },
   { key: "nav.cases", href: "#cases" },
   { key: "nav.partners", href: "#partners" },
   { key: "nav.philanthropy", href: "#philanthropy" },

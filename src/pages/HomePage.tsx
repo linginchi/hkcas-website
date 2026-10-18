@@ -5,6 +5,9 @@ import { Footer } from "../sections/Footer";
 import { Hero } from "../sections/Hero";
 import { MissionVision } from "../sections/MissionVision";
 import { Navigation } from "../sections/Navigation";
+import { Companies } from "../sections/Companies";
+import { International } from "../sections/International";
+import { Team } from "../sections/Team";
 import { Platform } from "../sections/Platform";
 import { Partners } from "../sections/Partners";
 import { Philanthropy } from "../sections/Philanthropy";
@@ -20,7 +23,10 @@ export function HomePage() {
         <About />
         <Services />
         <Platform />
+        <Companies />
         <Cases />
+        <International />
+        <Team />
         <Partners />
         <Philanthropy />
         <Contact />

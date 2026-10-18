@@ -6,17 +6,18 @@ export const translations = {
       home: "首页",
       about: "关于我们",
       services: "业务服务",
+      companies: "旗下公司",
       cases: "成功案例",
       partners: "战略伙伴",
       philanthropy: "公益捐赠",
       contact: "联系我们",
     },
     hero: {
-      badge: "非盈利性质法人组织",
+      badge: "非盈利性质法人组织 · 香港注册担保有限公司",
       title: "国科绿色发展国际实验室",
       subtitle: "（香港）有限公司",
       description:
-        "依托大湾区战略枢纽，驱动绿色与数字技术的全球转化与实业落地，通过“咨询+投资+运营”全周期赋能，助力国家战略执行与地方经济高质量转型。",
+        "依托大湾区战略枢纽，驱动绿色与数字技术的全球转化与实业落地，以“政商对接＋产业运营＋产能出海”三位一体，通过“咨询+投资管理+运营”全周期赋能，助力共建“一带一路”国家产业合作与地方经济高质量转型。",
       cta: { learnMore: "了解更多", contact: "联系我们" },
       stats: { founded: "成立年份", business: "核心业务", location: "战略枢纽" },
     },
@@ -32,13 +33,34 @@ export const translations = {
       vision: {
         title: "愿景",
         content:
-          "打造全球领先的绿色发展跨境整合平台，联结全球顶尖创新资源，构建数字化、零碳化、可持续的产业生态。",
+          "打造全球领先的绿色发展跨境整合平台——政商对接＋产业运营＋产能出海，联结全球顶尖创新资源，构建数字化、零碳化、可持续的产业生态。",
       },
       features: {
-        consulting: "咨询+投资+运营",
+        consulting: "咨询+投资管理+运营",
         consultingDesc: "全周期赋能",
         digital: "数字化+零碳化",
         digitalDesc: "可持续发展",
+      },
+      capabilities: {
+        title: "核心能力",
+        subtitle: "政商对接＋产业运营＋产能出海，三位一体的国际化绿色发展平台",
+        items: [
+          {
+            title: "政商对接",
+            description:
+              "联动共建“一带一路”国家政府、商协会与地方政府，提供政策沟通、招商引资与项目对接服务。HKCAS 国际合作部核心团队成员拥有二十年民间外交的经历与经验，与全球 170 余国驻华使领馆保持联络与交流，为国际政商对接与产能出海提供资源基础。",
+          },
+          {
+            title: "产业运营",
+            description:
+              "依托旗下运营主体，开展绿色能源、产业供应链与产业科技融资等业务的运营与管理，把咨询成果落到实业。",
+          },
+          {
+            title: "产能出海",
+            description:
+              "联合央企智库与地方政府，帮助优势产能和中资企业走向共建“一带一路”国家，共建海外产业园，并提供跨境结算、绿色标准与合规支持。",
+          },
+        ],
       },
     },
     about: {
@@ -51,8 +73,10 @@ export const translations = {
         "2017年11月30日，在公司联合创始人的倡议和赞助下，香港政府旗下香港科技园公司与国科控股合办“科技「一带一路」与粤港澳大湾区创新论坛”。",
       history2:
         "在时任香港行政长官林郑月娥女士、中科院院长白春礼院士、中联办副主任谭铁牛院士、著名银行家马蔚华博士等各界知名人士的见证下，双方签订合作谅解备忘录，为绿色新科技和产业发展建立合作框架。",
+      structureNote:
+        "HKCAS 为非营利性质法人组织，注册为香港担保有限公司，并通过旗下运营主体开展业务。",
       history3:
-        "作为本次论坛的落地成果之一，国科绿色发展国际实验室（香港）有限公司于2019年在中国香港注册成为非营利机构。2023年中咨产融（北京）科技有限公司成为实控机构成员。",
+        "作为本次论坛的落地成果之一，国科绿色发展国际实验室（香港）有限公司于2019年在中国香港注册成为非营利机构。2023年起，中咨产融（北京）科技有限公司成为战略合作伙伴。",
       founded: "成立年份",
       foundedValue: "2019",
       location: "注册地点",
@@ -81,16 +105,15 @@ export const translations = {
         },
         control: {
           year: "2023",
-          title: "实控机构",
+          title: "战略合作",
           content:
-            "中咨产融（北京）科技有限公司成为实控机构成员，开启新的发展阶段。",
+            "中咨产融（北京）科技有限公司成为战略合作伙伴，携手开启新的发展阶段。",
         },
       },
     },
     services: {
-      sectionTitle: "专业服务",
       title: "业务服务",
-      subtitle: "四大核心业务板块，全方位助力绿色发展、数字转型与企业出海",
+      subtitle: "五大核心业务板块，以“咨询+投资管理+运营”全周期模式，助力绿色发展、数字转型与企业出海",
       service1: {
         title: "地方实业资产的“市场化并购与重组”业务",
         description:
@@ -109,13 +132,51 @@ export const translations = {
         features: ["分布式绿电", "金融算力", "数字基建", "资产管理"],
       },
       service4: {
-        title: "企业出海服务平台：地方政府、央企智库与国际平台三方共建",
+        title: "国际政商对接与招商引资",
         description:
-          "围绕共建“一带一路”高质量发展，联合地方政府与央企智库，搭建服务地方优势产业“抱团出海”的综合平台，提供国别研判、项目评审、跨境通道与绿色标准支持，并以试点先行、逐步复制的方式稳步推进。",
-        features: ["地方政府共建", "央企智库赋能", "跨境通道", "试点复制"],
+          "依托央企智库与政商资源，联动共建“一带一路”国家政府、商协会与地方政府，开展政策沟通、项目对接与招商引资，促成双边产业合作落地。",
+        features: ["政商沟通", "项目对接", "招商引资", "双边合作"],
+      },
+      service5: {
+        title: "海外产业园共建与中资企业产能出海",
+        description:
+          "联合地方政府与央企智库，共建海外产业园区，帮助中资企业和地方优势产能走向共建“一带一路”国家，提供国别研判、项目评审、跨境通道与绿色标准支持，并以试点先行、逐步复制的方式稳步推进。",
+        features: ["海外园区共建", "企业产能出海", "跨境通道", "试点复制"],
       },
       cta: "需要了解更多业务详情？欢迎与我们联系",
-      ctaButton: "咨询服务",
+      ctaButton: "联系我们",
+    },
+    companies: {
+      sectionTitle: "集团架构",
+      title: "旗下主要公司",
+      subtitle: "以运营主体承载业务，在绿色能源、产业供应链与产业科技融资三个方向落地",
+      visit: "访问官网",
+      note: "运营主体依法独立开展业务；HKCAS 作为平台，承担品牌、标准与资源协同。",
+      items: [
+        {
+          name: "杭远绿色能源有限公司",
+          altName: "Geomotion Energy Ltd",
+          tag: "绿色能源运营实体",
+          description:
+            "与英国 Sunbird 集团合资设立，聚焦可持续航空燃料（SAF）、绿色甲醇等绿色燃料的贸易、生产与供应，以模块化、可复制的方式服务全球航空与航运脱碳。",
+          website: "https://geomotion.energy",
+        },
+        {
+          name: "杭远国际产业供应链有限公司",
+          altName: "Hang Yuan International Industrial Supply Chain Ltd.",
+          tag: "全球供应链运营实体 · 全资子公司",
+          description: "面向产业出海与跨境贸易，提供供应链组织、物流与贸易运营方面的支持。",
+          website: "",
+        },
+        {
+          name: "杭远产融（浙江）科技有限公司",
+          altName: "",
+          tag: "内地产业科技融资控股公司",
+          description:
+            "设立于长三角核心区域，聚集推动“一带一路”国家和地区双边经贸、产业合作服务生态的建设，为产业、技术、服务出海提供全链条服务，并组织境内外多层次资源系统性盘活存量资产。",
+          website: "",
+        },
+      ],
     },
     platform: {
       sectionTitle: "共建共享",
@@ -177,27 +238,6 @@ export const translations = {
       sectionTitle: "项目实践",
       title: "成功案例",
       subtitle: "携手行业领军企业，共同推动绿色发展与产业升级",
-      case1: {
-        title: "杭州市市政工程集团有限公司",
-        subtitle: "市政公用工程施工总承包特级企业",
-        category: "战略合作",
-        status: "已合作",
-        location: "浙江省杭州市",
-        description:
-          "中咨产融与国科绿色携手产业投资人，共同完成对杭州市市政工程集团的并购项目。通过“咨询+投资+运营”全周期赋能，为产业投资人提供专业的投后管理与运营支持，助力资产稳健发展。",
-        highlights: {
-          qualification: { label: "特级资质", value: "市政公用工程施工总承包特级" },
-          history: { label: "历史底蕴", value: "60余年发展历程" },
-          capacity: { label: "施工能力", value: "年施工能力超40亿元" },
-        },
-        details: [
-          "全国第八家设计施工一体化市政工程总承包特级企业",
-          "浙江省市政行业协会会长单位",
-          "百余项工程获国家级、省级优质工程称号",
-          "业务涵盖城市道路、桥梁隧道、轨道交通、水务工程等领域",
-        ],
-        website: "访问官网",
-      },
       case2: {
         title: "湖北恩施建始化工产业园区",
         subtitle: "零碳产业园区全周期服务项目",
@@ -229,7 +269,7 @@ export const translations = {
       partner1: {
         title: "中咨产融（北京）科技有限公司",
         subtitle: "中国国际工程咨询有限公司旗下",
-        tag: "实控机构",
+        tag: "战略合作伙伴",
         description:
           "中咨产融，是中国国际工程咨询有限公司（简称中咨，英文缩写CIECC）旗下公司。中咨成立于1982年，是国家高端智库和从事综合性工程咨询的中央企业。",
       },
@@ -294,12 +334,12 @@ export const translations = {
         "地方实业资产并购与重组",
         "零碳产业园区全周期服务",
         "跨境绿电+算力数字基建",
-        "企业出海服务平台",
-        "绿色技术咨询与投资",
+        "国际政商对接与招商引资",
+        "海外产业园共建与产能出海",
       ],
       cta: { title: "有合作意向？立即联系我们", button: "立即咨询" },
       copyright: "版权所有 © {year} 国科绿色发展国际实验室（香港）有限公司",
-      companyType: "非盈利担保有限公司 | 香港注册",
+      companyType: "非盈利性质法人组织 | 香港注册担保有限公司",
     },
     staff: {
       title: "收款",
@@ -340,17 +380,18 @@ export const translations = {
       home: "Home",
       about: "About",
       services: "Services",
+      companies: "Group Companies",
       cases: "Cases",
       partners: "Partners",
       philanthropy: "Philanthropy",
       contact: "Contact",
     },
     hero: {
-      badge: "Non-profit Organization",
+      badge: "Non-profit Organisation · Hong Kong Company Limited by Guarantee",
       title: "CAS Laboratory of Green Development",
       subtitle: "International (Hong Kong) Ltd.",
       description:
-        'Leveraging the Greater Bay Area as a strategic hub, we drive the global transformation and industrial implementation of green and digital technologies. Through our full-cycle "Consulting + Investment + Operations" model, we empower national strategy execution and high-quality local economic transformation.',
+        'Leveraging the Greater Bay Area as a strategic hub, we drive the global transformation and industrial implementation of green and digital technologies. Combining government-business engagement, industrial operations and overseas expansion of capacity, and through our full-cycle "Consulting + Investment Management + Operations" model, we support industrial cooperation with Belt and Road countries and high-quality local economic transformation.',
       cta: { learnMore: "Learn More", contact: "Contact Us" },
       stats: { founded: "Founded", business: "Core Business", location: "Strategic Hub" },
     },
@@ -367,13 +408,35 @@ export const translations = {
       vision: {
         title: "Vision",
         content:
-          "To build a world-leading cross-border green development integration platform, connecting top global innovation resources to create a digital, carbon-neutral, and sustainable industrial ecosystem.",
+          "To build a world-leading cross-border green development integration platform, combining government-business engagement, industrial operations and overseas expansion of capacity, connecting top global innovation resources to create a digital, carbon-neutral, and sustainable industrial ecosystem.",
       },
       features: {
-        consulting: "Consulting + Investment + Operations",
+        consulting: "Consulting + Investment Management + Operations",
         consultingDesc: "Full-cycle Empowerment",
         digital: "Digital + Carbon-neutral",
         digitalDesc: "Sustainable Development",
+      },
+      capabilities: {
+        title: "Core Capabilities",
+        subtitle:
+          "Government-business engagement, industrial operations and overseas expansion of capacity: an integrated international green development platform",
+        items: [
+          {
+            title: "Government-Business Engagement",
+            description:
+              "We connect governments, business associations and local governments of Belt and Road countries, providing policy communication, investment promotion and project matching. The core members of HKCAS's International Cooperation team have twenty years of experience in people-to-people diplomacy and maintain contact and exchange with more than 170 foreign embassies and consulates in China, providing a resource base for international government-business engagement and overseas expansion.",
+          },
+          {
+            title: "Industrial Operations",
+            description:
+              "Through our operating entities, we run and manage businesses in green energy, industrial supply chains and industrial-technology financing, turning consulting outcomes into real-economy operations.",
+          },
+          {
+            title: "Overseas Expansion",
+            description:
+              "Together with a central-SOE think tank and local governments, we help competitive capacity and Chinese enterprises go to Belt and Road countries, co-build overseas industrial parks, and provide cross-border settlement, green standards and compliance support.",
+          },
+        ],
       },
     },
     about: {
@@ -387,8 +450,10 @@ export const translations = {
         "On November 30, 2017, under the initiative and sponsorship of the company's co-founders, Hong Kong Science and Technology Parks Corporation and CAS Holdings co-hosted the \"Technology Belt and Road and Guangdong-Hong Kong-Macao Greater Bay Area Innovation Forum\".",
       history2:
         "Witnessed by Mrs. Carrie Lam Cheng Yuet-ngor, then Chief Executive of Hong Kong, Academician Bai Chunli, President of the Chinese Academy of Sciences, Academician Tan Tieniu, Deputy Director of the Liaison Office, and Dr. Ma Weihua, renowned banker, both parties signed a Memorandum of Understanding to establish a cooperation framework for green new technology and industrial development.",
+      structureNote:
+        "HKCAS is a non-profit organisation registered as a Hong Kong company limited by guarantee, and carries out its business through its operating entities.",
       history3:
-        "As one of the outcomes of this forum, CAS Laboratory of Green Development International (Hong Kong) Ltd. was registered as a non-profit organisation in Hong Kong in 2019. In 2023, CIECC Industry-Finance (Beijing) Technology Co., Ltd. became the controlling institution.",
+        "As one of the outcomes of this forum, CAS Laboratory of Green Development International (Hong Kong) Ltd. was registered as a non-profit organisation in Hong Kong in 2019. Since 2023, CIECC Industry-Finance (Beijing) Technology Co., Ltd. has been a strategic partner.",
       founded: "Founded",
       foundedValue: "2019",
       location: "Location",
@@ -416,17 +481,16 @@ export const translations = {
         },
         control: {
           year: "2023",
-          title: "Controlling Institution",
+          title: "Strategic Partnership",
           content:
-            "CIECC Industry-Finance became the controlling institution, opening a new chapter of development.",
+            "CIECC Industry-Finance became a strategic partner, opening a new chapter of development together.",
         },
       },
     },
     services: {
-      sectionTitle: "Professional Services",
       title: "Our Services",
       subtitle:
-        "Four core business segments, comprehensively empowering green development, digital transformation and overseas expansion of enterprises",
+        "Five core business segments, empowering green development, digital transformation and overseas expansion of enterprises through our full-cycle Consulting + Investment Management + Operations model",
       service1: {
         title: "Market-oriented M&A and Restructuring of Local Industrial Assets",
         description:
@@ -452,18 +516,53 @@ export const translations = {
         ],
       },
       service4: {
-        title: "Enterprise Overseas Expansion Platform, Co-built by Local Government, a Central-SOE Think Tank and an International Platform",
+        title: "International Government-Business Engagement and Investment Promotion",
         description:
-          'In support of high-quality Belt and Road cooperation, we work with local governments and a central-SOE think tank to build an integrated platform that helps local competitive industries "go global" together, providing country-risk assessment, project review, cross-border channels and green standards, advanced through a pilot-first, replicate-step-by-step approach.',
-        features: [
-          "Local Government Co-building",
-          "Think-tank Empowerment",
-          "Cross-border Channels",
-          "Pilot and Replicate",
-        ],
+          "Drawing on a central-SOE think tank and government-business resources, we connect governments, business associations and local governments of Belt and Road countries for policy communication, project matching and investment promotion, helping bilateral industrial cooperation take root.",
+        features: ["Policy Dialogue", "Project Matching", "Investment Promotion", "Bilateral Cooperation"],
+      },
+      service5: {
+        title: "Overseas Industrial Park Co-building and Overseas Expansion of Chinese Enterprises",
+        description:
+          'Together with local governments and a central-SOE think tank, we co-build overseas industrial parks and help Chinese enterprises and competitive local capacity go to Belt and Road countries, providing country assessment, project review, cross-border channels and green standards, advanced through a pilot-first, replicate-step-by-step approach.',
+        features: ["Overseas Park Co-building", "Enterprise Expansion", "Cross-border Channels", "Pilot and Replicate"],
       },
       cta: "Need more details about our services? Contact us today",
-      ctaButton: "Consult Services",
+      ctaButton: "Contact Us",
+    },
+    companies: {
+      sectionTitle: "Group Structure",
+      title: "Principal Group Companies",
+      subtitle:
+        "Business is carried out through operating entities in green energy, industrial supply chains and industrial-technology financing",
+      visit: "Visit Website",
+      note: "Each operating entity conducts its business independently in accordance with law; HKCAS acts as the platform for brand, standards and resource coordination.",
+      items: [
+        {
+          name: "Geomotion Energy Ltd",
+          altName: "杭远绿色能源有限公司",
+          tag: "Green Energy Operating Entity",
+          description:
+            "A joint venture with the UK's Sunbird Group, focusing on the trading, production and supply of green fuels such as sustainable aviation fuel (SAF) and green methanol, and serving decarbonisation of global aviation and shipping through modular, replicable units.",
+          website: "https://geomotion.energy",
+        },
+        {
+          name: "Hang Yuan International Industrial Supply Chain Ltd.",
+          altName: "杭远国际产业供应链有限公司",
+          tag: "Global Supply Chain Operating Entity · Wholly-owned Subsidiary",
+          description:
+            "Supports overseas expansion of industry and cross-border trade with supply-chain organisation, logistics and trading operations.",
+          website: "",
+        },
+        {
+          name: "Hang Yuan Industry-Finance (Zhejiang) Technology Co., Ltd.",
+          altName: "杭远产融（浙江）科技有限公司",
+          tag: "Mainland Industrial-Technology Financing Holding Company",
+          description:
+            "Based in the core of the Yangtze River Delta, it builds the service ecosystem for bilateral trade and industrial cooperation with Belt and Road countries and regions, provides end-to-end services for the overseas expansion of industry, technology and services, and mobilises multi-level resources at home and abroad to revitalise existing assets.",
+          website: "",
+        },
+      ],
     },
     platform: {
       sectionTitle: "Co-build and Share",
@@ -540,27 +639,6 @@ export const translations = {
       sectionTitle: "Case Studies",
       title: "Success Stories",
       subtitle: "Partnering with industry leaders to drive green development and industrial upgrading",
-      case1: {
-        title: "Hangzhou Municipal Engineering Group Co., Ltd.",
-        subtitle: "Special Class Contractor for Municipal Public Works",
-        category: "Strategic Partnership",
-        status: "Active",
-        location: "Hangzhou, Zhejiang Province",
-        description:
-          'CIECC Industry-Finance and CAS Green, together with industrial investors, completed the acquisition of Hangzhou Municipal Engineering Group. Through our full-cycle "Consulting + Investment + Operations" model, we provide investors with professional post-investment management and operational support for steady asset development.',
-        highlights: {
-          qualification: { label: "Qualification", value: "Special Class Contractor" },
-          history: { label: "History", value: "60+ Years" },
-          capacity: { label: "Capacity", value: "4B+ RMB/Year" },
-        },
-        details: [
-          "The 8th national design-build integrated municipal engineering contractor with special class qualification",
-          "President unit of Zhejiang Provincial Municipal Industry Association",
-          "Over 100 projects awarded national and provincial quality honors",
-          "Business covers urban roads, bridges, tunnels, rail transit, and water engineering",
-        ],
-        website: "Visit Website",
-      },
       case2: {
         title: "Jianshi Chemical Industrial Park, Enshi, Hubei",
         subtitle: "Zero-Carbon Industrial Park Full-Cycle Service",
@@ -593,7 +671,7 @@ export const translations = {
       partner1: {
         title: "CIECC Industry-Finance (Beijing) Technology Co., Ltd.",
         subtitle: "Subsidiary of China International Engineering Consulting Corporation",
-        tag: "Controlling Institution",
+        tag: "Strategic Partner",
         description:
           "CIECC Industry-Finance is a subsidiary of China International Engineering Consulting Corporation (CIECC). Founded in 1982, CIECC is a national high-end think tank and central enterprise engaged in comprehensive engineering consulting.",
       },
@@ -663,12 +741,12 @@ export const translations = {
         "Industrial Asset M&A and Restructuring",
         "Zero-Carbon Industrial Park Services",
         "Cross-border Green Power + Computing Infrastructure",
-        "Enterprise Overseas Expansion Platform",
-        "Green Technology Consulting & Investment",
+        "International Government-Business Engagement",
+        "Overseas Industrial Parks and Capacity Expansion",
       ],
       cta: { title: "Interested in partnership? Contact us now", button: "Contact Now" },
       copyright: "Copyright © {year} CAS Laboratory of Green Development International (Hong Kong) Ltd.",
-      companyType: "Non-profit Company Limited by Guarantee | Hong Kong Registered",
+      companyType: "Non-profit Organisation | Hong Kong Company Limited by Guarantee",
     },
     staff: {
       title: "Collect payment",
