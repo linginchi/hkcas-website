@@ -631,7 +631,7 @@ export const translations = {
           ],
         },
         {
-          name: "CAS Green Development (HKCAS)",
+          name: "HKCAS",
           tag: "Hub · Standards · Channels",
           points: [
             "Uses Hong Kong as an international window to link technology and industrial resources at home and abroad",
@@ -741,7 +741,7 @@ export const translations = {
         status: "In Planning",
         location: "Jianshi County, Enshi Prefecture, Hubei Province",
         description:
-          "CIECC Industry-Finance and CAS Green, together with local government, are jointly developing the Jianshi Chemical Industrial Park. Through professional consulting, investment, implementation, and operations services, we support high-quality local economic transformation. The project is currently in early planning, with updates to follow.",
+          "CIECC Industry-Finance and HKCAS, together with local government, are jointly developing the Jianshi Chemical Industrial Park. Through professional consulting, investment, implementation, and operations services, we support high-quality local economic transformation. The project is currently in early planning, with updates to follow.",
         highlights: {
           scale: { label: "Scale", value: "Subject to formal planning" },
           location: { label: "Location", value: "Jianshi County" },
