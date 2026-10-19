@@ -45,11 +45,27 @@
 /* ---------- nav ---------- */
 
 .rds-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 60;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f7f5ef;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.rds-nav--scrolled {
   background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  border-bottom-color: var(--line);
+  color: var(--ink);
+}
+.rds-nav .rds-brand-logo {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+.rds-nav--scrolled .rds-brand-logo {
+  filter: none;
 }
 .rds-nav-inner {
   display: flex;
@@ -82,7 +98,7 @@
   position: relative;
   display: inline-block;
   padding: 6px 0;
-  color: var(--ink-2);
+  color: inherit;
   text-decoration: none;
   font-size: 13px;
   letter-spacing: 0.01em;
@@ -95,7 +111,7 @@
   right: 0;
   bottom: 0;
   height: 1px;
-  background: var(--ink);
+  background: currentColor;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -110,14 +126,20 @@
   border-bottom: 1px solid transparent;
   background: none;
   padding: 2px 1px;
-  color: var(--muted);
+  color: rgba(247, 245, 239, 0.6);
   font: 400 11px/1.4 var(--mono);
   letter-spacing: 0.08em;
   cursor: pointer;
 }
 .rds-lang button[aria-pressed="true"] {
+  color: #fff;
+  border-bottom-color: currentColor;
+}
+.rds-nav--scrolled .rds-lang button {
+  color: var(--muted);
+}
+.rds-nav--scrolled .rds-lang button[aria-pressed="true"] {
   color: var(--ink);
-  border-bottom-color: var(--ink);
 }
 .rds-menu-btn {
   display: none;
@@ -143,6 +165,7 @@
 .rds-panel a {
   display: block;
   padding: 11px 0;
+  color: var(--ink);
   border-bottom: 1px solid rgba(18, 26, 22, 0.08);
   text-decoration: none;
   font-size: 15px;
@@ -1692,4 +1715,100 @@
   max-width: 42em;
   font-size: 14.5px;
   line-height: 1.95;
+}
+
+
+/* ---------- full-bleed hero (OG treatment) ---------- */
+
+.rds-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--deep);
+  color: #f7f5ef;
+}
+.rds-hero-media {
+  position: absolute;
+  inset: 0;
+}
+.rds-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 46%;
+  filter: saturate(0.8) contrast(1.02) brightness(0.9);
+}
+.rds-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 16, 13, 0.94) 0%, rgba(10, 16, 13, 0.74) 46%, rgba(10, 16, 13, 0.26) 100%),
+    linear-gradient(180deg, rgba(10, 16, 13, 0.4) 0%, transparent 32%, rgba(10, 16, 13, 0.5) 100%);
+}
+.rds-hero-inner {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 24px;
+  align-items: stretch;
+}
+.rds-copy--hero {
+  grid-column: 1 / span 7;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 170px 0 48px;
+}
+.rds-hero .rds-display-1 { color: #fff; }
+.rds-hero .rds-eyebrow { color: rgba(247, 245, 239, 0.62); }
+.rds-hero .rds-eyebrow::before { background: #d4a853; }
+.rds-hero .rds-lead { color: rgba(247, 245, 239, 0.8); }
+.rds-hero .rds-slogan { color: rgba(247, 245, 239, 0.66); }
+.rds-hero .rds-slogan::before { background: #d4a853; }
+.rds-hero .rds-stats { border-top-color: rgba(255, 255, 255, 0.22); }
+.rds-hero .rds-stat-label { color: rgba(247, 245, 239, 0.55); }
+.rds-hero .rds-stat-value { color: #fff; }
+.rds-hero .rds-btn {
+  background: #f7f5ef;
+  color: #121a16;
+}
+.rds-hero .rds-btn:hover { background: #fff; }
+.rds-hero .rds-link {
+  color: #f7f5ef;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+.rds-hero .rds-link:hover {
+  color: #fff;
+  border-color: #fff;
+}
+.rds-hero-caption {
+  position: absolute;
+  right: 0;
+  bottom: 26px;
+  z-index: 1;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(247, 245, 239, 0.55);
+}
+
+@media (max-width: 980px) {
+  .rds-copy--hero { grid-column: 1 / span 9; }
+}
+@media (max-width: 760px) {
+  .rds-copy--hero {
+    grid-column: 1 / -1;
+    padding: 120px 0 32px;
+  }
+  .rds-hero-caption {
+    position: static;
+    grid-column: 1 / -1;
+    padding: 0 0 20px;
+    text-align: right;
+  }
 }

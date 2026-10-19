@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../hooks/useLanguage";
 import { translations } from "../i18n/translations";
 import { About } from "./sections/About";
@@ -51,8 +51,16 @@ const HERO_COPY = {
 export default function RedesignHome() {
   const { language, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const copy = HERO_COPY[language];
   const hero = translations[language].hero;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const switchLanguage = (next: "zh" | "en") => {
     if (next === language) return;
@@ -61,7 +69,7 @@ export default function RedesignHome() {
 
   return (
     <div className="rds" data-lang={language} id="home">
-      <header className="rds-nav">
+      <header className={`rds-nav${scrolled ? " rds-nav--scrolled" : ""}`}>
         <div className="rds-container rds-nav-inner">
           <a className="rds-brand" href="#home" aria-label="HKCAS home">
             <img
@@ -122,58 +130,59 @@ export default function RedesignHome() {
       </header>
 
       <main>
-        <section aria-labelledby="rds-hero-title">
-          <div className="rds-container">
-            <div className="rds-hero-grid">
-              <div className="rds-copy">
-                <p className="rds-eyebrow">{copy.eyebrow}</p>
-                <h1 className="rds-display-1" id="rds-hero-title">
-                  {language === "zh" ? (
-                    <>
-                      绿色产业，<br />跨境落地。
-                    </>
-                  ) : (
-                    <>
-                      Green development,<br />delivered<br />across borders.
-                    </>
-                  )}
-                </h1>
-                <p className="rds-lead">{copy.lead}</p>
-                <p className="rds-slogan">{hero.slogan}</p>
-                <div className="rds-actions">
-                  <a className="rds-btn" href="#contact">
-                    {copy.cta1}
-                  </a>
-                  <a className="rds-link" href="#services">
-                    {copy.cta2} <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-                <dl className="rds-stats">
-                  <div>
-                    <dt className="rds-stat-label">{hero.stats.founded}</dt>
-                    <dd className="rds-stat-value">2019</dd>
-                  </div>
-                  <div>
-                    <dt className="rds-stat-label">{hero.stats.business}</dt>
-                    <dd className="rds-stat-value">5</dd>
-                  </div>
-                  <div>
-                    <dt className="rds-stat-label">{hero.stats.location}</dt>
-                    <dd className="rds-stat-value">{copy.gba}</dd>
-                  </div>
-                </dl>
-              </div>
+        <section className="rds-hero" aria-labelledby="rds-hero-title">
+          <div className="rds-hero-media">
+            <img
+              src="/intl/borsod-zone.webp"
+              alt={copy.alt}
+              width={1000}
+              height={669}
+              fetchPriority="high"
+            />
+            <div className="rds-hero-scrim" aria-hidden="true" />
+          </div>
 
-              <figure className="rds-figure">
-                <img
-                  src="/intl/borsod-zone.webp"
-                  alt={copy.alt}
-                  width={1000}
-                  height={669}
-                />
-                <figcaption className="rds-caption">{copy.caption}</figcaption>
-              </figure>
+          <div className="rds-container rds-hero-inner">
+            <div className="rds-copy rds-copy--hero">
+              <p className="rds-eyebrow">{copy.eyebrow}</p>
+              <h1 className="rds-display-1" id="rds-hero-title">
+                {language === "zh" ? (
+                  <>
+                    绿色产业，<br />跨境落地。
+                  </>
+                ) : (
+                  <>
+                    Green development,<br />delivered<br />across borders.
+                  </>
+                )}
+              </h1>
+              <p className="rds-lead">{copy.lead}</p>
+              <p className="rds-slogan">{hero.slogan}</p>
+              <div className="rds-actions">
+                <a className="rds-btn" href="#contact">
+                  {copy.cta1}
+                </a>
+                <a className="rds-link" href="#services">
+                  {copy.cta2} <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <dl className="rds-stats">
+                <div>
+                  <dt className="rds-stat-label">{hero.stats.founded}</dt>
+                  <dd className="rds-stat-value">2019</dd>
+                </div>
+                <div>
+                  <dt className="rds-stat-label">{hero.stats.business}</dt>
+                  <dd className="rds-stat-value">5</dd>
+                </div>
+                <div>
+                  <dt className="rds-stat-label">{hero.stats.location}</dt>
+                  <dd className="rds-stat-value">{copy.gba}</dd>
+                </div>
+              </dl>
             </div>
+
+            <p className="rds-hero-caption">{copy.caption}</p>
           </div>
         </section>
 

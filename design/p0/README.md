@@ -45,7 +45,7 @@ open design/p0/index.html
 
 | # | 現有區塊 | 改造 |
 |---|---|---|
-| 01 | Hero | A（照片）或 B（純排版＋業務索引） |
+| 01 | Hero | 滿版照片＋深綠遮罩＋白字（OG treatment） |
 | 02 | 使命與願景 | 7/5 分欄，使命／願景各一段，取消卡片 |
 | 03 | 關於我們 | 照片＋歷史 7/5，時間軸改細線橫排 |
 | 04 | 業務服務 | **P0 已完成**：01–05 索引列 |
@@ -68,7 +68,7 @@ open design/p0/index.html
 
 ## 已確認的決策
 
-1. **Hero A**（照片主導）。
+1. **Hero**：滿版照片＋深綠遮罩＋白字（OG treatment）；2026-10-19 由左文右圖改為滿版背景。
 2. **H1 文案**：中文「绿色产业，跨境落地。」／英文「Green development, delivered across borders.」照用。
 3. **Sunbird**：文字名 + mark（由官方 lockup 裁切）。
 4. **Hero 照片**：宝思德經貿合作區（匈牙利，中咨專案）作 placeholder，caption 已標明「戰略夥伴項目」。

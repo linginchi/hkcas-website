@@ -97,14 +97,19 @@ h6 {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff9e6;
+  background: #f7f5ef;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4a853;
-  border-radius: 3px;
+  background: rgba(18, 26, 22, 0.22);
+  border: 3px solid #f7f5ef;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(18, 26, 22, 0.35);
 }
