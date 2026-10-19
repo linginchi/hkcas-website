@@ -145,13 +145,18 @@
   display: none;
   appearance: none;
   background: none;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 2px;
   padding: 7px 10px;
+  background: transparent;
   font: 400 11px var(--mono);
   letter-spacing: 0.08em;
-  color: var(--ink);
+  color: #f7f5ef;
   cursor: pointer;
+}
+.rds-nav--scrolled .rds-menu-btn {
+  color: var(--ink);
+  border-color: var(--line);
 }
 .rds-panel {
   position: absolute;
