@@ -326,6 +326,15 @@ export const translations = {
         description:
           "中企会成立于2013年，是由国内外知名企业家、投资家、经济学家、管理专家等行业领袖共同搭建的资源生态综合服务平台，由国家科技成果转化引导基金理事长、招商银行原行长马蔚华先生担任主席。",
       },
+      partner3: {
+        title: "Sunbird 集团",
+        subtitle: "英国 · 可再生燃料与可再生能源",
+        tag: "合作伙伴",
+        description:
+          "Sunbird Group 在非洲开发和运营大型可再生燃料与低碳电力项目，业务涵盖可再生燃料、以废弃生物质为原料的可再生电力与热能，以及面向未来的绿色甲醇、氢能与氨等燃料路径，并通过农户合作项目带动当地农业发展。双方合资设立杭远绿色能源有限公司（Geomotion Energy Ltd）。",
+        website: "https://sunbird.group",
+      },
+      visit: "访问官网",
       cta: {
         title: "期待与您合作",
         description: "我们欢迎更多志同道合的伙伴加入，共同推动绿色发展事业",
@@ -777,6 +786,15 @@ export const translations = {
         description:
           "Founded in 2013, China Enterprise Club is a resource ecosystem service platform built by industry leaders including entrepreneurs, investors, economists, and management experts. Dr. Ma Weihua, former President of China Merchants Bank, serves as Chairman.",
       },
+      partner3: {
+        title: "Sunbird Group",
+        subtitle: "United Kingdom · Renewable Fuel and Renewable Energy",
+        tag: "Partner",
+        description:
+          "Sunbird Group develops and operates large-scale renewable fuel and low-carbon power projects in Africa, spanning renewable fuels, renewable power and heat from waste biomass, and future-fuel pathways such as green methanol, hydrogen and ammonia, with out-grower programmes supporting local agriculture. The two parties are joint-venture partners in Geomotion Energy Ltd.",
+        website: "https://sunbird.group",
+      },
+      visit: "Visit Website",
       cta: {
         title: "Looking Forward to Partnership",
         description: "We welcome more like-minded partners to join us in driving green development",

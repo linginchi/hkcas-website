@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { translations } from "../i18n/translations";
 import { useInView } from "../hooks/useInView";
 import { useLanguage } from "../hooks/useLanguage";
@@ -23,8 +24,8 @@ export function Partners() {
           <p className="section-subtitle max-w-3xl mx-auto">{t("partners.subtitle")}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {[copy.partner1, copy.partner2].map((partner) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {[copy.partner1, copy.partner2, copy.partner3].map((partner) => (
             <div key={partner.title} className="bg-white/80 rounded-3xl p-8 border border-[#E8DFD0]">
               <span className="inline-block px-3 py-1 text-xs rounded-full bg-[#2D4A3E] text-white mb-4">
                 {partner.tag}
@@ -32,6 +33,17 @@ export function Partners() {
               <h3 className="text-xl font-medium mb-2">{partner.title}</h3>
               <p className="text-[#8B7355] mb-4">{partner.subtitle}</p>
               <p className="text-[#666666] leading-relaxed font-serif">{partner.description}</p>
+              {"website" in partner && partner.website ? (
+                <a
+                  href={partner.website}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-2 text-[#2D4A3E] font-medium mt-5"
+                >
+                  {copy.visit}
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              ) : null}
             </div>
           ))}
         </div>
