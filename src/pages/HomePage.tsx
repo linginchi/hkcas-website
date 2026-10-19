@@ -1,37 +1,5 @@
-import { Cases } from "../sections/Cases";
-import { About } from "../sections/About";
-import { Contact } from "../sections/Contact";
-import { Footer } from "../sections/Footer";
-import { Hero } from "../sections/Hero";
-import { MissionVision } from "../sections/MissionVision";
-import { Navigation } from "../sections/Navigation";
-import { Companies } from "../sections/Companies";
-import { International } from "../sections/International";
-import { Team } from "../sections/Team";
-import { Platform } from "../sections/Platform";
-import { Partners } from "../sections/Partners";
-import { Philanthropy } from "../sections/Philanthropy";
-import { Services } from "../sections/Services";
+import RedesignHome from "../redesign/RedesignHome";
 
 export function HomePage() {
-  return (
-    <>
-      <Navigation />
-      <main>
-        <Hero />
-        <MissionVision />
-        <About />
-        <Services />
-        <Platform />
-        <Companies />
-        <Cases />
-        <International />
-        <Team />
-        <Partners />
-        <Philanthropy />
-        <Contact />
-      </main>
-      <Footer />
-    </>
-  );
+  return <RedesignHome />;
 }

@@ -93,6 +93,7 @@ function localizeJsonLd(html, meta) {
       data.knowsAbout = org.knowsAbout;
       data.address = {
         ...data.address,
+        streetAddress: org.streetAddress,
         addressRegion: org.addressRegion,
         addressLocality: org.addressLocality,
       };

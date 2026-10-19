@@ -65,6 +65,13 @@ export function Footer() {
           </button>
         </div>
 
+        <div className="mb-7 max-w-4xl">
+          <p className="mb-2 text-[11px] uppercase tracking-[0.16em] text-white/40">
+            {t("footer.disclaimerLabel")}
+          </p>
+          <p className="text-xs leading-relaxed text-white/50">{t("footer.disclaimer")}</p>
+        </div>
+
         <div className="border-t border-white/10 pt-6 text-sm text-white/50 flex flex-col md:flex-row justify-between gap-2">
           <p>{t("footer.copyright").replace("{year}", String(year))}</p>
           <p>{t("footer.companyType")}</p>

@@ -15,6 +15,7 @@ export type RouteMeta = {
     name: string;
     description: string;
     knowsAbout: string[];
+    streetAddress: string;
     addressRegion: string;
     addressLocality: string;
   };
@@ -42,6 +43,7 @@ export const ROUTE_META: RouteMeta[] = [
         "企业出海服务平台",
         "国际政商对接与招商引资",
       ],
+      streetAddress: "中环广场",
       addressRegion: "香港",
       addressLocality: "湾仔",
     },
@@ -68,6 +70,7 @@ export const ROUTE_META: RouteMeta[] = [
         "Enterprise overseas expansion platform",
         "International government-business engagement",
       ],
+      streetAddress: "Central Plaza",
       addressRegion: "Hong Kong",
       addressLocality: "Wan Chai",
     },

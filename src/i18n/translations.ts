@@ -365,7 +365,7 @@ export const translations = {
       title: "联系我们",
       subtitle: "有任何问题或合作意向，欢迎随时与我们联系",
       info: {
-        address: { title: "地址", value: "香港湾仔" },
+        address: { title: "地址", value: "香港湾仔中环广场" },
         email: { title: "邮箱", value: "contact@hkcas.org" },
       },
       form: {
@@ -396,6 +396,9 @@ export const translations = {
       cta: { title: "有合作意向？立即联系我们", button: "立即咨询" },
       copyright: "版权所有 © {year} 国科绿色发展国际实验室（香港）有限公司",
       companyType: "非盈利性质法人组织 | 香港注册担保有限公司",
+      disclaimerLabel: "免责声明",
+      disclaimer:
+        "本站内容仅供一般参考，不构成任何投资建议、要约或招揽。HKCAS 涉及监管的业务，均委托持牌机构执行。",
     },
     staff: {
       title: "收款",
@@ -827,7 +830,7 @@ export const translations = {
       title: "Contact Us",
       subtitle: "Have questions or interested in partnership? Feel free to reach out",
       info: {
-        address: { title: "Address", value: "Wan Chai, Hong Kong" },
+        address: { title: "Address", value: "Central Plaza, Wan Chai, Hong Kong" },
         email: { title: "Email", value: "contact@hkcas.org" },
       },
       form: {
@@ -861,6 +864,9 @@ export const translations = {
       cta: { title: "Interested in partnership? Contact us now", button: "Contact Now" },
       copyright: "Copyright © {year} CAS Laboratory of Green Development International (Hong Kong) Ltd.",
       companyType: "Non-profit Organisation | Hong Kong Company Limited by Guarantee",
+      disclaimerLabel: "Disclaimer",
+      disclaimer:
+        "The content of this website is for general information only and does not constitute investment advice, an offer or a solicitation. Any regulated business of HKCAS is entrusted to, and carried out by, licensed institutions.",
     },
     staff: {
       title: "Collect payment",

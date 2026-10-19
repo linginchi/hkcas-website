@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; }
+  .og {
+    position: relative; width: 1200px; height: 630px; overflow: hidden;
+    background: #121a16; color: #f7f5ef;
+    font-family: "Source Serif 4", "Noto Serif SC", Georgia, serif;
+  }
+  .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) contrast(1.02) brightness(.92); }
+  .scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,16,13,.94) 0%, rgba(10,16,13,.74) 46%, rgba(10,16,13,.2) 100%); }
+  .logo { position: absolute; left: 56px; top: 42px; height: 38px; width: auto; display: block; }
+  .copy { position: absolute; left: 56px; bottom: 54px; width: 780px; }
+  .eyebrow { margin: 0 0 16px; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(247,245,239,.62); }
+  h1 { margin: 0; font-size: 64px; line-height: 1.02; letter-spacing: -.025em; font-weight: 400; }
+  .cn { margin: 20px 0 0; font-family: "Noto Sans SC", "IBM Plex Sans", sans-serif; font-size: 18px; letter-spacing: .04em; color: rgba(247,245,239,.72); }
+  .url { position: absolute; right: 56px; bottom: 50px; margin: 0; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .12em; color: rgba(247,245,239,.6); }
+</style>
+</head>
+<body>
+  <div class="og">
+    <img class="bg" src="http://localhost:5199/intl/borsod-zone.webp" alt="" />
+    <div class="scrim"></div>
+    <img class="logo" src="http://localhost:5199/logo-horizontal-white.svg" alt="HKCAS" />
+    <div class="copy">
+      <p class="eyebrow">Green development · Hong Kong</p>
+      <h1>Green development,<br />delivered<br />across borders.</h1>
+      <p class="cn">国科绿色发展国际实验室（香港）有限公司</p>
+    </div>
+    <p class="url">hkcas.org</p>
+  </div>
+</body>
+</html>
