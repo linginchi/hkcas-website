@@ -69,6 +69,12 @@
   to = "/app.html"
   status = 200
 
+# 海報／邀請函報名短鏈 /r/*。邊緣函數記訪問後 301，目標網址在 shared/campaign-redirects.ts。
+# 必須先於下方 SPA fallback，否則 /r/* 會被改寫成首頁。
+[[edge_functions]]
+  function = "campaign-redirect"
+  path = "/r/*"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

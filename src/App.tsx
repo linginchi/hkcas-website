@@ -12,6 +12,7 @@ import { StaffPayPage } from "./pages/StaffPayPage";
 export function AppRoutes() {
   return (
     <Routes>
+      {/* /r/* 由 Netlify 邊緣函數 301，不在客戶端路由註冊。 */}
       <Route path="/" element={<HomePage />} />
       <Route path="/en" element={<HomePage />} />
       <Route path="/staff/pay" element={<StaffPayPage />} />

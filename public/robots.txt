@@ -3,6 +3,7 @@ Allow: /
 Disallow: /staff/
 Disallow: /pay/
 Disallow: /api/
+Disallow: /r/
 Disallow: /app.html
 
 Sitemap: https://hkcas.org/sitemap.xml
