@@ -4,7 +4,7 @@
  */
 export const CAMPAIGN_REDIRECTS: Readonly<Record<string, string>> = {
   ahket1217:
-    "https://events.bagevent.io/events/ZMkcAsXkzm?salesCode=QRDVTDAAYEFMJAUWY2T9DYWTH3JR5JPE&src=HKCAS",
+    "https://events.bagevent.io/events/ZMkcAsXkzm?salesCode=F6TTAFXC2PI5PBQCCWMLPLADKNJVMM8R",
 };
 
 export const CAMPAIGN_REDIRECT_STATUS = 301;

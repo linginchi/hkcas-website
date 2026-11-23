@@ -11,7 +11,7 @@ import {
 } from "./campaign-redirects.ts";
 
 const TARGET =
-  "https://events.bagevent.io/events/ZMkcAsXkzm?salesCode=QRDVTDAAYEFMJAUWY2T9DYWTH3JR5JPE&src=HKCAS";
+  "https://events.bagevent.io/events/ZMkcAsXkzm?salesCode=F6TTAFXC2PI5PBQCCWMLPLADKNJVMM8R";
 
 describe("campaign redirects", () => {
   it("keeps the printed AHKETC target in one config entry", () => {
